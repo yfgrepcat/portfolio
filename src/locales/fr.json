@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "name": "Yoann FRANCOIS",
+    "title": "Étudiant Ingénieur Réseaux",
+    "subtitle": "Étudiant Ingénieur Réseaux",
+    "description": "Passionné par les technologies réseau, la cybersécurité et les solutions innovantes pour un avenir connecté.",
+    "cta": "Découvrir Mon Parcours",
+    "status": "Automatisation des réseaux chez Airbus grâce à SPIE ICS"
+  },
+  "sections": {
+    "title": "Explorez Mon Portfolio",
+    "subtitle": "Découvrez mon parcours à travers différents aspects de mon développement académique et personnel",
+    "explore": "Explorer",
+    "career": {
+      "title": "Carrière & Expérience",
+      "description": "Parcours professionnel, stages et développement de carrière en ingénierie réseau et technologie."
+    },
+    "engineering": {
+      "title": "Études d'Ingénieur",
+      "description": "Parcours académique, projets techniques et spécialisation en ingénierie réseau à l'ENSEEIHT."
+    },
+    "international": {
+      "title": "Expérience Internationale",
+      "description": "Perspective globale à travers les échanges, l'apprentissage des langues et les expériences multiculturelles."
+    },
+    "sustainability": {
+      "title": "Durabilité & Valeurs",
+      "description": "Engagement envers la responsabilité environnementale, le service communautaire et l'impact positif."
+    },
+    "activities": {
+      "title": "Sports & Activités",
+      "description": "Activités sportives, loisirs créatifs, rôles de leadership et intérêts personnels hors académiques."
+    }
+  },
+  "engineering": {
+    "title": "Études d'Ingénieur",
+    "description": "Mon parcours académique en ingénierie réseau, des fondamentaux à la spécialisation avancée",
+    "journey": {
+      "title": "Cursus Ingénieur",
+      "items": [
+        {
+          "year": "2024-2025",
+          "title": "Ingénierie Réseau Avancée",
+          "focus": "Spécialisation & Innovation",
+          "description": "Approfondissement des technologies réseau de pointe, implémentation 5G et conception d'infrastructures IoT.",
+          "skills": ["Réseaux 5G", "Edge Computing", "Automatisation Réseau", "SDN"]
+        },
+        {
+          "year": "2023-2024",
+          "title": "Systèmes Réseau Fondamentaux",
+          "focus": "Infrastructure & Sécurité",
+          "description": "Étude complète des protocoles réseau, frameworks de cybersécurité et solutions de niveau entreprise.",
+          "skills": ["Sécurité Réseau", "MPLS", "BGP", "Conception Firewall"]
+        },
+        {
+          "year": "2022-2023",
+          "title": "Fondamentaux d'Ingénieur",
+          "focus": "Construction des Bases",
+          "description": "Fondations mathématiques, bases de programmation et concepts réseau fondamentaux.",
+          "skills": ["C/C++", "Python", "TCP/IP", "Mathématiques"]
+        }
+      ]
+    },
+    "domains": {
+      "title": "Domaines Techniques",
+      "items": [
+        {
+          "name": "Architecture Réseau",
+          "description": "Conception et implémentation d'infrastructures réseau évolutives",
+          "topics": ["Réseaux d'Entreprise", "Conception Data Center", "Réseau Cloud", "Topologie Réseau"]
+        },
+        {
+          "name": "Cybersécurité",
+          "description": "Protocoles de sécurité, évaluation des menaces et stratégies défensives",
+          "topics": ["Tests de Pénétration", "Réponse aux Incidents", "Audit Sécurité", "Analyse des Menaces"]
+        }
+      ]
+    }
+  },
+  "sustainability": {
+    "title": "Durabilité & Valeurs", 
+    "description": "Mon engagement à avoir un impact positif à travers le service communautaire et la conscience environnementale",
+    "values": [
+      {
+        "title": "Empathie & Inclusion",
+        "description": "Croire que la technologie doit servir tout le monde, surtout ceux qui en ont le plus besoin. Je m'efforce de rendre mon travail accessible et inclusif."
+      },
+      {
+        "title": "Responsabilité Environnementale",
+        "description": "Comprendre que les petites actions s'additionnent. J'essaie d'être conscient de mon impact environnemental dans mes choix personnels et professionnels."
+      }
+    ],
+    "community": [
+      {
+        "title": "Bénévole Accessibilité Numérique",
+        "organization": "Centre Local d'Aide aux Handicapés",
+        "duration": "2023 - Présent",
+        "description": "Aider les personnes handicapées à apprendre à utiliser la technologie et adapter les outils numériques à leurs besoins.",
+        "lessons": [
+          "L'importance de la patience et de la communication adaptative",
+          "Comment de petits ajustements techniques peuvent faire d'énormes différences",
+          "Que l'accessibilité profite à tous, pas seulement aux personnes handicapées"
+        ],
+        "highlights": [
+          "Aidé plus de 15 personnes à apprendre les compétences informatiques de base",
+          "Créé des tutoriels simplifiés pour les logiciels de lecture d'écran",
+          "Appris les bases de la langue des signes pour mieux communiquer"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "name": "Yoann FRANCOIS",
+    "title": "Network Engineering Student",
+    "subtitle": "Network Engineering Student",
+    "description": "Passionate about network technologies, cybersecurity, and innovative solutions for a connected future.",
+    "cta": "Discover My Journey",
+    "status": "Automating networks at Airbus thanks to SPIE ICS"
+  },
+  "sections": {
+    "title": "Explore My Portfolio",
+    "subtitle": "Discover my journey through different aspects of my academic and personal development",
+    "explore": "Explore",
+    "career": {
+      "title": "Career & Experience",
+      "description": "Professional journey, internships, and career development in network engineering and technology."
+    },
+    "engineering": {
+      "title": "Engineering Studies",
+      "description": "Academic journey, technical projects, and specialization in network engineering at ENSEEIHT."
+    },
+    "international": {
+      "title": "International Experience", 
+      "description": "Global perspective through exchanges, language learning, and multicultural experiences."
+    },
+    "sustainability": {
+      "title": "Sustainability & Values",
+      "description": "Commitment to environmental responsibility, community service, and making a positive impact."
+    },
+    "activities": {
+      "title": "Sports & Activities",
+      "description": "Athletic pursuits, creative hobbies, leadership roles, and personal interests outside academics."
+    }
+  },
+  "engineering": {
+    "title": "Engineering Studies",
+    "description": "My academic journey in network engineering, from fundamentals to advanced specialization",
+    "journey": {
+      "title": "Engineering Journey",
+      "items": [
+        {
+          "year": "2024-2025",
+          "title": "Advanced Network Engineering",
+          "focus": "Specialization & Innovation",
+          "description": "Deep dive into cutting-edge network technologies, 5G implementation, and IoT infrastructure design.",
+          "skills": ["5G Networks", "Edge Computing", "Network Automation", "SDN"]
+        },
+        {
+          "year": "2023-2024", 
+          "title": "Core Network Systems",
+          "focus": "Infrastructure & Security",
+          "description": "Comprehensive study of network protocols, cybersecurity frameworks, and enterprise-grade solutions.",
+          "skills": ["Network Security", "MPLS", "BGP", "Firewall Design"]
+        },
+        {
+          "year": "2022-2023",
+          "title": "Engineering Fundamentals",
+          "focus": "Foundation Building",
+          "description": "Mathematical foundations, programming fundamentals, and basic networking concepts.",
+          "skills": ["C/C++", "Python", "TCP/IP", "Mathematics"]
+        }
+      ]
+    },
+    "domains": {
+      "title": "Technical Domains",
+      "items": [
+        {
+          "name": "Network Architecture",
+          "description": "Design and implementation of scalable network infrastructures",
+          "topics": ["Enterprise Networks", "Data Center Design", "Cloud Networking", "Network Topology"]
+        },
+        {
+          "name": "Cybersecurity",
+          "description": "Security protocols, threat assessment, and defensive strategies", 
+          "topics": ["Penetration Testing", "Incident Response", "Security Auditing", "Threat Analysis"]
+        }
+      ]
+    }
+  },
+  "sustainability": {
+    "title": "Sustainability & Values",
+    "description": "My commitment to making a positive impact through community service and environmental consciousness",
+    "values": [
+      {
+        "title": "Empathy & Inclusion",
+        "description": "Believing that technology should serve everyone, especially those who need it most. I strive to make my work accessible and inclusive."
+      },
+      {
+        "title": "Environmental Responsibility", 
+        "description": "Understanding that small actions add up. I try to be mindful of my environmental impact in both personal and professional choices."
+      }
+    ],
+    "community": [
+      {
+        "title": "Digital Accessibility Volunteer",
+        "organization": "Local Disability Support Center",
+        "duration": "2023 - Present",
+        "description": "Helping individuals with disabilities learn to use technology and adapt digital tools to their needs.",
+        "lessons": [
+          "The importance of patience and adaptive communication",
+          "How small technical adjustments can make huge differences",
+          "That accessibility benefits everyone, not just those with disabilities"
+        ],
+        "highlights": [
+          "Helped 15+ individuals learn basic computer skills",
+          "Created simplified tutorials for screen reader software", 
+          "Learned sign language basics to better communicate"
+        ]
+      }
+    ]
+  }
+}
