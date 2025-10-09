@@ -7,17 +7,21 @@
           @click="$router.push('/')"
           class="back-btn"
         />
-        <h1 class="engineering-title">{{ $t('sections.engineering.title') }}</h1>
+        <h1 class="engineering-title">{{ $t('engineering.title') }}</h1>
       </div>
       
       <div class="engineering-content">
-        <p class="engineering-description">{{ $t('sections.engineering.description') }}</p>
+        <p class="engineering-description">{{ $t('engineering.description') }}</p>
         
         <!-- Engineering Journey -->
         <div class="journey-section">
           <h2 class="section-title">{{ $t('engineering.journey.title') }}</h2>
           <div class="timeline">
-            <div class="timeline-item" v-for="(item, index) in journeyItems" :key="index">
+            <div 
+              class="timeline-item" 
+              v-for="(item, index) in journeyItems" 
+              :key="index"
+            >
               <div class="timeline-marker"></div>
               <div class="timeline-content">
                 <div class="timeline-date">{{ item.year }}</div>
@@ -39,46 +43,32 @@
             </div>
           </div>
         </div>
-
-        <!-- Technical Domains -->
-        <div class="domains-section">
-          <h2 class="section-title">{{ $t('engineering.domains.title') }}</h2>
-          <v-row>
-            <v-col cols="12" md="6" lg="4" v-for="(domain, index) in domainItems" :key="index">
-              <v-card class="domain-card" elevation="2">
-                <v-card-text>
-                  <div class="domain-icon">
-                    <v-icon :icon="domainIcons[index]" size="40" :color="domainColors[index]" />
-                  </div>
-                  <h3 class="domain-title">{{ domain.name }}</h3>
-                  <p class="domain-description">{{ domain.description }}</p>
-                  <div class="domain-topics">
-                    <div class="topic-item" v-for="topic in domain.topics" :key="topic">
-                      <v-icon icon="mdi-check-circle" size="16" :color="domainColors[index]" />
-                      <span>{{ topic }}</span>
-                    </div>
-                  </div>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
-        </div>
       </div>
     </v-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+// Use Vue I18n
+const { t, tm } = useI18n()
 
-// Get translated data
-const journeyItems = computed(() => t('engineering.journey.items'))
-const domainItems = computed(() => t('engineering.domains.items'))
+// Get translated data using tm() which handles arrays better
+const journeyItems = computed(() => {
+  const items = tm('engineering.journey.items')
+  console.log('Journey items:', items)
+  return Array.isArray(items) ? items : []
+})
 
-// Only keep non-translatable data (icons, colors, etc.)
+const domainItems = computed(() => {
+  const items = tm('engineering.domains.items')
+  console.log('Domain items:', items)
+  return Array.isArray(items) ? items : []
+})
+
+// Icons and colors for domains
 const domainIcons = [
   'mdi-sitemap',
   'mdi-shield-check'
@@ -88,6 +78,12 @@ const domainColors = [
   '#4caf50',
   '#f44336'
 ]
+
+onMounted(() => {
+  console.log('Engineering component mounted')
+  console.log('Journey items count:', journeyItems.value.length)
+  console.log('Domain items count:', domainItems.value.length)
+})
 </script>
 
 <style scoped>
@@ -115,6 +111,7 @@ const domainColors = [
   color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .back-btn {
@@ -138,6 +135,8 @@ const domainColors = [
 .timeline {
   position: relative;
   padding-left: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .timeline::before {
@@ -173,6 +172,7 @@ const domainColors = [
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .timeline-date {
@@ -186,6 +186,7 @@ const domainColors = [
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .timeline-focus {
@@ -215,15 +216,23 @@ const domainColors = [
   height: 100%;
   transition: transform 0.3s ease;
   border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .domain-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .domain-icon {
   text-align: center;
   margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .domain-title {
@@ -231,6 +240,7 @@ const domainColors = [
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .domain-description {
@@ -240,15 +250,25 @@ const domainColors = [
   text-align: center;
 }
 
+.domain-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .topic-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem;
   font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .engineering-title {
+    font-size: 2rem;
+  }
+  
   .timeline {
     padding-left: 1rem;
   }
@@ -259,6 +279,12 @@ const domainColors = [
   
   .timeline-marker {
     left: -1.5rem;
+  }
+  
+  .engineering-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
 }
 </style>

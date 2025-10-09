@@ -7,297 +7,133 @@
           @click="$router.push('/')"
           class="back-btn"
         />
-        <h1 class="international-title">{{ $t('sections.international.title') }}</h1>
+        <h1 class="international-title">{{ $t('international.title') }}</h1>
       </div>
       
       <div class="international-content">
-        <p class="international-description">{{ $t('sections.international.description') }}</p>
-        
-        <!-- World Map Section -->
-        <div class="map-section">
-          <h2 class="section-title">My International Journey</h2>
-          <div class="world-map">
-            <div class="map-container">
-              <div class="country-pins">
-                <div 
-                  v-for="(location, index) in visitedCountries" 
-                  :key="index"
-                  class="country-pin"
-                  :style="location.position"
-                  @click="selectedCountry = location"
-                >
-                  <div class="pin-dot"></div>
-                  <div class="pin-label">{{ location.country }}</div>
-                </div>
-              </div>
-              <!-- Simple world map representation -->
-              <div class="map-background">
-                <div class="continent europe"></div>
-                <div class="continent asia"></div>
-                <div class="continent africa"></div>
-                <div class="continent america"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Exchange Programs -->
-        <div class="exchanges-section">
-          <h2 class="section-title">Exchange Programs & Study Abroad</h2>
-          <div class="exchange-cards">
-            <div 
-              v-for="(exchange, index) in exchanges" 
-              :key="index"
-              class="exchange-card"
-            >
-              <div class="exchange-flag">{{ exchange.flag }}</div>
-              <div class="exchange-content">
-                <h3 class="exchange-university">{{ exchange.university }}</h3>
-                <div class="exchange-location">{{ exchange.city }}, {{ exchange.country }}</div>
-                <div class="exchange-period">{{ exchange.period }}</div>
-                <p class="exchange-description">{{ exchange.description }}</p>
-                <div class="exchange-focus">
-                  <strong>Focus Areas:</strong>
-                  <div class="focus-tags">
-                    <span 
-                      v-for="focus in exchange.focus" 
-                      :key="focus"
-                      class="focus-tag"
-                    >
-                      {{ focus }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <p class="international-description">{{ $t('international.description') }}</p>
 
         <!-- Language Proficiency -->
         <div class="languages-section">
-          <h2 class="section-title">Multilingual Communication</h2>
-          <div class="language-grid">
-            <div 
-              v-for="(language, index) in languages" 
-              :key="index"
-              class="language-item"
-            >
-              <div class="language-header">
-                <div class="language-flag">{{ language.flag }}</div>
-                <div class="language-info">
-                  <h4 class="language-name">{{ language.name }}</h4>
-                  <div class="language-level">{{ language.level }}</div>
-                </div>
-              </div>
-              <div class="proficiency-bar">
-                <div 
-                  class="proficiency-fill"
-                  :style="{ 
-                    width: language.proficiency + '%',
-                    backgroundColor: language.color 
-                  }"
-                ></div>
-              </div>
-              <div class="language-certifications">
-                <v-chip 
-                  v-for="cert in language.certifications" 
-                  :key="cert"
-                  size="x-small"
-                  variant="outlined"
-                  :color="language.color"
-                >
-                  {{ cert }}
-                </v-chip>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cultural Immersion -->
-        <div class="culture-section">
-          <h2 class="section-title">Cultural Immersion & Global Perspectives</h2>
+          <h2 class="section-title">{{ $t('international.languages.title') }}</h2>
           <v-row>
-            <v-col cols="12" md="6" v-for="(experience, index) in culturalExperiences" :key="index">
-              <div class="culture-card">
-                <div class="culture-image">
-                  <v-icon :icon="experience.icon" size="40" :color="experience.color" />
-                </div>
-                <div class="culture-content">
-                  <h3 class="culture-title">{{ experience.title }}</h3>
-                  <div class="culture-location">{{ experience.location }}</div>
-                  <p class="culture-description">{{ experience.description }}</p>
-                  <div class="culture-insights">
-                    <div class="insight-label">Key Insights:</div>
-                    <ul class="insights-list">
-                      <li v-for="insight in experience.insights" :key="insight">{{ insight }}</li>
-                    </ul>
+            <v-col 
+              cols="12" 
+              md="6" 
+              lg="4" 
+              v-for="(lang, index) in languageItems" 
+              :key="index"
+            >
+              <v-card class="language-card" elevation="2">
+                <v-card-text>
+                  <div class="language-header">
+                    <span class="language-flag">{{ lang.flag }}</span>
+                    <div class="language-info">
+                      <h3 class="language-name">{{ lang.language }}</h3>
+                      <p class="language-level">{{ lang.level }}</p>
+                    </div>
                   </div>
-                </div>
-              </div>
+                  
+                  <div class="proficiency-bar">
+                    <v-progress-linear
+                      :model-value="lang.proficiency"
+                      color="success"
+                      height="8"
+                      rounded
+                    />
+                    <div class="proficiency-label">{{ lang.proficiency }}%</div>
+                  </div>
+                  
+                  <p class="language-description">{{ lang.description }}</p>
+                </v-card-text>
+              </v-card>
             </v-col>
           </v-row>
         </div>
 
-        <!-- Global Network -->
-        <div class="network-section">
-          <h2 class="section-title">International Network</h2>
-          <div class="network-stats">
-            <div class="stat-card">
-              <div class="stat-number">25</div>
-              <div class="stat-label">Countries Visited</div>
-              <div class="stat-icon">🌍</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">150+</div>
-              <div class="stat-label">International Contacts</div>
-              <div class="stat-icon">👥</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">8</div>
-              <div class="stat-label">University Partners</div>
-              <div class="stat-icon">🎓</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">4</div>
-              <div class="stat-label">Languages Spoken</div>
-              <div class="stat-icon">🗣️</div>
+        <!-- International Experiences -->
+        <div class="experiences-section">
+          <h2 class="section-title">{{ $t('international.experiences.title') }}</h2>
+          <p class="overview-description">{{ $t('international.overview.description') }}</p>
+          <div class="timeline">
+            <div 
+              class="timeline-item" 
+              v-for="(item, index) in experienceItems" 
+              :key="index"
+            >
+              <div class="timeline-marker">
+                <span class="timeline-flag">{{ item.flag }}</span>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <div class="timeline-year">{{ item.year }}</div>
+                  <div class="timeline-type">{{ item.type }}</div>
+                </div>
+                <h3 class="timeline-title">{{ item.title }}</h3>
+                <p class="timeline-location">📍 {{ item.location }}</p>
+                <p class="timeline-duration">⏱️ {{ item.duration }}</p>
+                <p class="timeline-description">{{ item.description }}</p>
+                
+                <div class="highlights">
+                  <h4>Key Highlights:</h4>
+                  <ul>
+                    <li v-for="highlight in item.highlights" :key="highlight">
+                      {{ highlight }}
+                    </li>
+                  </ul>
+                </div>
+                
+                <div class="timeline-skills">
+                  <v-chip 
+                    v-for="skill in item.skills" 
+                    :key="skill" 
+                    size="small"
+                    variant="outlined"
+                    color="success"
+                  >
+                    {{ skill }}
+                  </v-chip>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
     </v-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
-const selectedCountry = ref(null)
+// Get translated data
+const overviewStats = computed(() => tm('international.overview.stats'))
+const experienceItems = computed(() => tm('international.experiences.items'))
+const languageItems = computed(() => tm('international.languages.items'))
+const culturalInsights = computed(() => tm('international.cultural.insights'))
 
-const visitedCountries = [
-  { country: "France", position: { top: "35%", left: "48%" } },
-  { country: "Germany", position: { top: "32%", left: "52%" } },
-  { country: "Switzerland", position: { top: "38%", left: "51%" } },
-  { country: "Spain", position: { top: "42%", left: "45%" } },
-  { country: "UK", position: { top: "28%", left: "46%" } }
-]
+// Map interaction
+const showCountryInfo = (country: string) => {
+  console.log(`Showing info for ${country}`)
+  // You can add a modal or tooltip here showing country-specific information
+}
 
-const exchanges = [
-  {
-    university: "Technical University of Munich",
-    city: "Munich",
-    country: "Germany",
-    flag: "🇩🇪",
-    period: "Fall 2024 (Current)",
-    description: "Specializing in advanced network engineering and Industry 4.0 technologies. Collaborating with German students on IoT infrastructure projects.",
-    focus: ["5G Networks", "Industry 4.0", "Smart Manufacturing", "German Engineering"]
-  },
-  {
-    university: "ETH Zurich",
-    city: "Zurich", 
-    country: "Switzerland",
-    flag: "🇨🇭",
-    period: "Summer 2023",
-    description: "Intensive cybersecurity summer program with international cohort. Developed multilingual security frameworks for global enterprises.",
-    focus: ["Cybersecurity", "International Compliance", "Multilingual Systems", "Research Methods"]
-  }
-]
-
-const languages = [
-  {
-    name: "French",
-    level: "Native Speaker",
-    proficiency: 100,
-    color: "#e74c3c",
-    flag: "🇫🇷",
-    certifications: ["Native"]
-  },
-  {
-    name: "English",
-    level: "Professional Proficiency",
-    proficiency: 95,
-    color: "#3498db",
-    flag: "🇬🇧",
-    certifications: ["TOEFL 110", "Cambridge C2"]
-  },
-  {
-    name: "German",
-    level: "Intermediate Plus", 
-    proficiency: 75,
-    color: "#f39c12",
-    flag: "🇩🇪",
-    certifications: ["Goethe B2", "DSH-2"]
-  },
-  {
-    name: "Spanish",
-    level: "Conversational",
-    proficiency: 60,
-    color: "#e67e22",
-    flag: "🇪🇸",
-    certifications: ["DELE B1"]
-  }
-]
-
-const culturalExperiences = [
-  {
-    title: "German Engineering Culture",
-    location: "Munich, Germany",
-    icon: "mdi-cog",
-    color: "#ff9800",
-    description: "Immersed in the precision and systematic approach of German engineering methodologies.",
-    insights: [
-      "Importance of thorough documentation and standardization",
-      "Collaborative decision-making in technical teams",
-      "Balance between innovation and reliability"
-    ]
-  },
-  {
-    title: "Swiss Innovation Ecosystem",
-    location: "Zurich, Switzerland", 
-    icon: "mdi-lightbulb",
-    color: "#2196f3",
-    description: "Experienced the Swiss approach to research, innovation, and international collaboration.",
-    insights: [
-      "Multicultural teamwork in research environments",
-      "Precision in project management and execution",
-      "Integration of sustainability in tech solutions"
-    ]
-  },
-  {
-    title: "European Academic Networks",
-    location: "Various EU Cities",
-    icon: "mdi-school",
-    color: "#9c27b0",
-    description: "Participated in pan-European academic conferences and student exchanges.",
-    insights: [
-      "Diverse approaches to engineering education",
-      "Importance of cross-cultural communication",
-      "European perspectives on technology ethics"
-    ]
-  },
-  {
-    title: "International Tech Communities",
-    location: "Virtual & Physical Meetups",
-    icon: "mdi-account-group",
-    color: "#4caf50",
-    description: "Active participation in international technology communities and hackathons.",
-    insights: [
-      "Global trends in network engineering",
-      "Cultural differences in problem-solving approaches",
-      "Building trust in multicultural teams"
-    ]
-  }
-]
+onMounted(() => {
+  console.log('International component mounted')
+  console.log('Experience items count:', experienceItems.value.length)
+  console.log('Language items count:', languageItems.value.length)
+})
 </script>
 
 <style scoped>
 .international-page {
   min-height: 100vh;
   padding: 2rem 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
 }
 
 .international-header {
@@ -310,161 +146,195 @@ const culturalExperiences = [
 .international-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .international-description {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 .back-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: 600;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
   margin-bottom: 2rem;
   text-align: center;
 }
 
-/* World Map Section */
-.map-section {
+/* Overview Stats */
+.overview-section {
   margin-bottom: 4rem;
 }
 
-.world-map {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
+.overview-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-.map-container {
-  position: relative;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
+.stats-row {
+  margin-top: 2rem;
 }
 
-.country-pin {
-  position: absolute;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.pin-dot {
-  width: 12px;
-  height: 12px;
-  background: #ff4757;
-  border: 2px solid white;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
-}
-
-.pin-label {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.8);
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.country-pin:hover .pin-label {
-  opacity: 1;
-}
-
-/* Exchange Programs */
-.exchanges-section {
-  margin-bottom: 4rem;
-}
-
-.exchange-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.exchange-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
+.stat-card {
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
-.exchange-card:hover {
-  transform: translateY(-5px);
+.stat-card:hover {
+  transform: translateY(-4px);
 }
 
-.exchange-flag {
-  font-size: 4rem;
-  flex-shrink: 0;
-}
-
-.exchange-content {
-  flex: 1;
-}
-
-.exchange-university {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #4caf50;
   margin-bottom: 0.5rem;
 }
 
-.exchange-location {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-  margin-bottom: 0.25rem;
+.stat-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 0.5rem;
 }
 
-.exchange-period {
-  color: #ffd700;
-  font-weight: 600;
+.stat-description {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.4;
+}
+
+/* Experiences Timeline */
+.experiences-section {
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #4caf50;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -3rem;
+  top: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: white;
+  border-radius: 50%;
+  border: 3px solid #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timeline-flag {
+  font-size: 1.5rem;
+}
+
+.timeline-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
-.exchange-description {
-  color: rgba(255, 255, 255, 0.9);
+.timeline-year {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4caf50;
+}
+
+.timeline-type {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.timeline-location, .timeline-duration {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-description {
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-.exchange-focus {
-  color: rgba(255, 255, 255, 0.9);
+.highlights {
+  margin-bottom: 1rem;
 }
 
-.focus-tags {
+.highlights h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.highlights ul {
+  padding-left: 1.2rem;
+}
+
+.highlights li {
+  margin-bottom: 0.25rem;
+  line-height: 1.5;
+}
+
+.timeline-skills {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.focus-tag {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  color: white;
 }
 
 /* Languages Section */
@@ -472,17 +342,15 @@ const culturalExperiences = [
   margin-bottom: 4rem;
 }
 
-.language-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+.language-card {
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
 }
 
-.language-item {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 1.5rem;
+.language-card:hover {
+  transform: translateY(-2px);
 }
 
 .language-header {
@@ -497,173 +365,203 @@ const culturalExperiences = [
 }
 
 .language-name {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: white;
   margin-bottom: 0.25rem;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .language-level {
-  color: rgba(255, 255, 255, 0.8);
+  color: #4caf50;
+  font-weight: 500;
   font-size: 0.9rem;
 }
 
 .proficiency-bar {
-  width: 100%;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-  overflow: hidden;
+  position: relative;
   margin-bottom: 1rem;
 }
 
-.proficiency-fill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width 0.8s ease;
+.proficiency-label {
+  position: absolute;
+  right: 0;
+  top: -1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.language-certifications {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+.language-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
 }
 
-/* Cultural Experiences */
-.culture-section {
+/* Map Section */
+.map-section {
   margin-bottom: 4rem;
 }
 
-.culture-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  height: 100%;
-  transition: transform 0.3s ease;
-}
-
-.culture-card:hover {
-  transform: translateY(-5px);
-}
-
-.culture-image {
+.map-description {
   text-align: center;
-  margin-bottom: 1rem;
-}
-
-.culture-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  margin-bottom: 0.5rem;
-}
-
-.culture-location {
-  text-align: center;
-  color: #ffd700;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.culture-description {
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.culture-insights {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.insight-label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.insights-list {
-  list-style: none;
-  padding: 0;
-}
-
-.insights-list li {
-  position: relative;
-  padding-left: 1rem;
-  margin-bottom: 0.25rem;
-  font-size: 0.9rem;
-}
-
-.insights-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: #ffd700;
-}
-
-/* Network Stats */
-.network-section {
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 2rem;
 }
 
-.network-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+.map-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.stat-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
+.map-container {
+  position: relative;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.embedded-map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.country-pins {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.country-pin {
+  position: absolute;
+  pointer-events: all;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   transition: transform 0.3s ease;
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
+.country-pin:hover {
+  transform: scale(1.2);
 }
 
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #ffd700;
+.country-pin .flag {
+  font-size: 1.8rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.pin-label {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Approximate positions for European countries */
+.france { top: 60%; left: 45%; }
+.germany { top: 40%; left: 55%; }
+.spain { top: 75%; left: 35%; }
+.italy { top: 70%; left: 55%; }
+
+/* Cultural Insights */
+.cultural-section {
+  margin-bottom: 4rem;
+}
+
+.cultural-description {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.insight-card {
+  height: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-4px);
+}
+
+.insight-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.insight-description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.insight-impact h4 {
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #4caf50;
 }
 
-.stat-label {
-  color: white;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+.insight-impact p {
+  line-height: 1.5;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
 }
 
-.stat-icon {
-  font-size: 2rem;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .exchange-card {
-    flex-direction: column;
-    text-align: center;
+  .international-title {
+    font-size: 2rem;
   }
   
-  .language-grid {
-    grid-template-columns: 1fr;
+  .timeline {
+    padding-left: 2rem;
+  }
+  
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-marker {
+    left: -2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .timeline-flag {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
   
   .map-container {
-    height: 200px;
+    height: 280px;
   }
   
-  .stat-card {
-    padding: 1.5rem;
+  .country-pin .flag {
+    font-size: 1.4rem;
   }
 }
 </style>

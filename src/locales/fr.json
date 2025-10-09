@@ -1,11 +1,15 @@
 {
   "hero": {
     "name": "Yoann FRANCOIS",
-    "title": "Étudiant Ingénieur Réseaux",
+    "title": "Apprenti Ingénieur NetOps / DevOps",
     "subtitle": "Étudiant Ingénieur Réseaux",
     "description": "Passionné par les technologies réseau, la cybersécurité et les solutions innovantes pour un avenir connecté.",
     "cta": "Découvrir Mon Parcours",
-    "status": "Automatisation des réseaux chez Airbus grâce à SPIE ICS"
+    "status": "Automatisation réseau chez Airbus grâce à SPIE ICS",
+    "buttons": {
+      "contact": "Me Contacter",
+      "work": "Voir Mon Travail"
+    }
   },
   "sections": {
     "title": "Explorez Mon Portfolio",
@@ -24,7 +28,7 @@
       "description": "Perspective globale à travers les échanges, l'apprentissage des langues et les expériences multiculturelles."
     },
     "sustainability": {
-      "title": "Durabilité & Valeurs",
+      "title": "Développement Durable & Valeurs",
       "description": "Engagement envers la responsabilité environnementale, le service communautaire et l'impact positif."
     },
     "activities": {
@@ -32,81 +36,431 @@
       "description": "Activités sportives, loisirs créatifs, rôles de leadership et intérêts personnels hors académiques."
     }
   },
-  "engineering": {
-    "title": "Études d'Ingénieur",
-    "description": "Mon parcours académique en ingénierie réseau, des fondamentaux à la spécialisation avancée",
-    "journey": {
-      "title": "Cursus Ingénieur",
+  "activities": {
+    "title": "Sports & Activités",
+    "description": "Mon parcours à travers le sport, les activités créatives et les intérêts personnels qui façonnent qui je suis au-delà des études",
+    "athletic": {
+      "title": "Activités Sportives",
+      "description": "Le sport a été une source constante de motivation, m'enseignant le dévouement, l'esprit d'équipe et le dépassement des limites.",
       "items": [
         {
-          "year": "2024-2025",
-          "title": "Ingénierie Réseau Avancée",
-          "focus": "Spécialisation & Innovation",
-          "description": "Approfondissement des technologies réseau de pointe, implémentation 5G et conception d'infrastructures IoT.",
-          "skills": ["Réseaux 5G", "Edge Computing", "Automatisation Réseau", "SDN"]
+          "sport": "Musculation & Cardio",
+          "level": "Intermédiaire",
+          "duration": "5 ans",
+          "description": "Mon sport de maintien, en salle de sport ou en extérieur afin de rester en bonne forme et ",
+          "achievements": [
+            "-"
+          ],
+          "skills": ["Discipline", "Objectifs à Long Terme", "Santé & Bien-être"],
+          "impact": "-",
+          "icon": "mdi-weight-lifter",
+          "color": "#ff9800"
         },
         {
-          "year": "2023-2024",
-          "title": "Systèmes Réseau Fondamentaux",
-          "focus": "Infrastructure & Sécurité",
-          "description": "Étude complète des protocoles réseau, frameworks de cybersécurité et solutions de niveau entreprise.",
-          "skills": ["Sécurité Réseau", "MPLS", "BGP", "Conception Firewall"]
+          "sport": "Natation & Secourisme",
+          "level": "Brevet de Nageur Sauveteur et Secouriste en Équipe",
+          "duration": "4 ans",
+          "description": "Sport individuel qui me défie mentalement et physiquement, enseignant la précision et la pensée stratégique.",
+          "achievements": [
+            "Demi-finaliste en tournoi de club",
+            "Amélioration du classement de débutant à intermédiaire",
+            "Partenaire d'entraînement régulier pour joueurs juniors"
+          ],
+          "skills": ["Concentration Mentale", "Pensée Stratégique", "Discipline Individuelle", "Adaptabilité"],
+          "impact": "Le sauvetage m'a appris la responsabilité et l'importance de rester calme sous pression. Il a également amélioré mes compétences en communication et ma capacité à travailler en équipe.",
+          "icon": "mdi-swim",
+          "color": "#00ccff"
         },
         {
-          "year": "2022-2023",
-          "title": "Fondamentaux d'Ingénieur",
-          "focus": "Construction des Bases",
-          "description": "Fondations mathématiques, bases de programmation et concepts réseau fondamentaux.",
-          "skills": ["C/C++", "Python", "TCP/IP", "Mathématiques"]
+          "sport": "Sports de combat (Kickboxing & Arts Martiaux Mixtes)",
+          "level": "Intermédiaire / Loisir",
+          "duration": "3 ans",
+          "description": "Les sports de combat m'ont enseigné la discipline, et le respect. Le nombre de techniques à apprendre et les exigences physiques me poussent à m'améliorer constamment et à rester curieux.",
+          "achievements": [
+            "-"
+          ],
+          "skills": ["Endurance", "Clarté Mentale", "Discipline", "Gestion du Stress"],
+          "impact": "Les sports de combat m'ont aidé à développer ma confiance en moi et ma capacité à rester calme sous pression, compétences essentielles dans des situations de crise.",
+          "icon": "mdi-swim",
+          "color": "#ff0000"
         }
       ]
     },
-    "domains": {
-      "title": "Domaines Techniques",
+    "creative": {
+      "title": "Loisirs créatifs & Intérêts Personnels",
       "items": [
         {
-          "name": "Architecture Réseau",
-          "description": "Conception et implémentation d'infrastructures réseau évolutives",
-          "topics": ["Réseaux d'Entreprise", "Conception Data Center", "Réseau Cloud", "Topologie Réseau"]
+          "title": "Homelabbing",
+          "category": "Tech",
+          "description": "Rester curieux des technologies émergentes au‑delà de mon cursus académique. Améliorer le confort en automatisant les services, en auto‑hébergeant et en mettant en place l’automatisation IoT à la maison.",
+          "highlights": [
+            "Auto‑hébergement",
+            "Architecture réseau",
+            "Administration système",
+            "Configuration d’automatisation Home Assistant"
+          ],
+          "connection": "L’expérimentation pratique renforce les connaissances théoriques et stimule l’innovation dans mes études d’ingénierie.",
+          "icon": "mdi-chip",
+          "color": "#ff5722"
         },
         {
-          "name": "Cybersécurité",
-          "description": "Protocoles de sécurité, évaluation des menaces et stratégies défensives",
-          "topics": ["Tests de Pénétration", "Réponse aux Incidents", "Audit Sécurité", "Analyse des Menaces"]
+          "title": "Randonnée & Nature",
+          "category": "Extérieur",
+          "description": "Sorties régulières de randonnée pour se déconnecter, se ressourcer et apprécier les merveilles d’ingénierie de la nature.",
+          "highlights": [
+            "Exploré des sentiers de montagne dans 3 pays différents",
+            "Sensibilisation environnementale grâce aux expériences en plein air"
+          ],
+          "connection": "La nature inspire une réflexion durable et offre une perspective sur l’élégance des systèmes naturels par rapport à ceux conçus par l’homme.",
+          "icon": "mdi-hiking",
+          "color": "#4caf50"
+        },
+        {
+          "title": "Lecture",
+          "category": "Créatif",
+          "description": "Lecteur passionné de tous les genres pour nourrir l’imagination et l’apprentissage continu. Offre un moyen de se détendre et d’acquérir de nouvelles perspectives.",
+          "highlights": [
+            "Littérature",
+            "Livres de nutrition et de cuisine",
+            "Livres de musculation et de conditionnement"
+          ],
+          "connection": "La lecture élargit mes horizons, alimente la créativité et fournit des idées qui favorisent le développement personnel.",
+          "icon": "mdi-bookshelf",
+          "color": "#9c27b0"
         }
       ]
     }
   },
   "sustainability": {
-    "title": "Durabilité & Valeurs", 
-    "description": "Mon engagement à avoir un impact positif à travers le service communautaire et la conscience environnementale",
-    "values": [
-      {
-        "title": "Empathie & Inclusion",
-        "description": "Croire que la technologie doit servir tout le monde, surtout ceux qui en ont le plus besoin. Je m'efforce de rendre mon travail accessible et inclusif."
-      },
-      {
-        "title": "Responsabilité Environnementale",
-        "description": "Comprendre que les petites actions s'additionnent. J'essaie d'être conscient de mon impact environnemental dans mes choix personnels et professionnels."
-      }
-    ],
-    "community": [
-      {
-        "title": "Bénévole Accessibilité Numérique",
-        "organization": "Centre Local d'Aide aux Handicapés",
-        "duration": "2023 - Présent",
-        "description": "Aider les personnes handicapées à apprendre à utiliser la technologie et adapter les outils numériques à leurs besoins.",
-        "lessons": [
-          "L'importance de la patience et de la communication adaptative",
-          "Comment de petits ajustements techniques peuvent faire d'énormes différences",
-          "Que l'accessibilité profite à tous, pas seulement aux personnes handicapées"
-        ],
-        "highlights": [
-          "Aidé plus de 15 personnes à apprendre les compétences informatiques de base",
-          "Créé des tutoriels simplifiés pour les logiciels de lecture d'écran",
-          "Appris les bases de la langue des signes pour mieux communiquer"
-        ]
-      }
-    ]
+    "title": "Développement Durable & Valeurs",
+    "description": "Mon engagement afin d'avoir un impact positif dans différentes sphères. Du service communautaire à la conscience environnementale, en passant par l'éducation et les pratiques durables personnelles.",
+    "community": {
+      "title": "Bénévolat",
+      "items": [
+        {
+          "title": "Bénévole dans un ESAT",
+          "organization": "L'Arche en Pays Toulousain",
+          "duration": "2025 (à venir)",
+          "icon": "mdi-wheelchair-accessibility",
+          "description": "(Cette action est en cours de préparation.) Contribuer à la vie de la communauté en assistant des personnes en situation de handicap dans les activités quotidiennes.",
+          "lessons": [
+            "Leçons à venir."
+          ],
+          "highlights": [
+            "De nombreux à venir !"
+          ]
+        },
+        {
+          "title": "Cleanwalk - Ramassage de Déchets",
+          "organization": "Toulouse Zéro Plastique",
+          "duration": "2025 (à venir)",
+          "icon": "mdi-recycle",
+          "description": "(Cette action est en cours de préparation.) Participer à des événements de nettoyage organisés pour aider à réduire la pollution plastique dans les parcs et espaces publics locaux.",
+          "lessons": [
+            "Leçons à venir."
+          ],
+          "highlights": [
+            "De nombreux à venir !"
+          ]
+        },
+        {
+          "title": "Future action au sein de mon entreprise ?",
+          "organization": "SPIE ISC Initiatives RSE (OnePulse)",
+          "duration": "2025 (à venir)",
+          "icon": "mdi-account-supervisor-circle",
+          "description": "(Cette action est en cours de préparation.) Participer à des initiatives RSE par le biais de mon employeur SPIE ICS pour contribuer à des projets communautaires et environnementaux.",
+          "lessons": [
+            "Leçons à venir."
+          ],
+          "highlights": [
+            "De nombreux à venir !"
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Éducation & Mentorat",
+      "intro": "Missions de mentorat, partage de connaissances et soutien aux étudiants.",
+      "items": [
+        {
+          "title": "Article 1 - Mentorat vers le Sup'",
+          "target": "Élèves de Terminale au Lycée",
+          "icon": "mdi-account-school",
+          "color": "#2196f3",
+          "description": "Mentorat de lycéens intéressés par l'enseignement supérieur, fournissant des conseils sur les choix académiques et les parcours professionnels. Un programme de mise en relation est organisé par l'association afin d'apparier les étudiants avec des mentors dans leur domaine d'intérêt. Des relations de mentorat à long terme sont encouragées pour fournir un soutien continu.",
+          "activities": [
+            "Sessions de mentorat individuelles",
+            "Discussion autour de la vie universitaire",
+            "Aide pour les candidatures parcoursup",
+            "Soutien continu tout au long de l'année scolaire"
+          ],
+          "reflection": "Cette expérience m'a permis de développer mes compétences en communication et en écoute active. Aider les étudiants à naviguer dans leurs choix académiques a été extrêmement gratifiant et m'a rappelé l'importance du mentorat."
+        },
+        {
+          "title": "IngéSup",
+          "target": "Etudiants de BTS",
+          "icon": "mdi-human-greeting",
+          "color": "#9c27b0",
+          "description": "Aider les étudiants de BTS à se préparer pour la transition vers l'enseignement supérieur et l'école d'ingénieur, en partageant des conseils sur les compétences d'étude, la gestion du temps et les attentes universitaires.",
+          "activities": [
+            "Ateliers de groupe",
+            "Conseils personnalisés",
+            "Partage d'expériences personnelles",
+            "Soutien continu"
+          ],
+          "reflection": "Mentorer des étudiants de BTS m'a permis de renforcer mes compétences en leadership et en communication. Voir leur progression et leur confiance grandir a été une expérience enrichissante bien que moins \"sur-mesure\" que pour les lycéens."
+        }
+      ]
+    },
+    "practices": {
+      "title": "Pratiques Durables Personnelles",
+      "items": [
+        {
+          "title": "Transport Réfléchi",
+          "description": "Utiliser les transports publics, vélo ou marche quand possible. Covoiturage pour les trajets plus longs.",
+          "icon": "mdi-bus",
+          "color": "#4caf50"
+        },
+        {
+          "title": "Minimalisme Numérique",
+          "description": "Être intentionnel sur l'utilisation de la technologie, éviter les mises à niveau inutiles et bien entretenir les appareils.",
+          "icon": "mdi-cellphone",
+          "color": "#2196f3"
+        },
+        {
+          "title": "Réduction des Déchets",
+          "description": "Minimiser le gaspillage alimentaire, utiliser des contenants réutilisables et trier correctement le recyclage.",
+          "icon": "mdi-delete",
+          "color": "#ff9800"
+        },
+        {
+          "title": "Local & Saisonnier",
+          "description": "Soutenir les entreprises locales quand possible et être conscient des choix alimentaires saisonniers.",
+          "icon": "mdi-store",
+          "color": "#8bc34a"
+        }
+      ]
+    }
+  },
+  "international": {
+    "title": "Expérience Internationale",
+    "description": "Mon parcours global à travers les échanges culturels, l'apprentissage des langues et les perspectives internationales",
+    "overview": {
+      "title": "Perspective Globale",
+      "description": "Frise chronologique retraçant mon projet de mobilité internationale, pour grande partie dans un contexte entreprise. Je souhaite également la diversifier en prenant part à des conférences à l'international sur des sujets de pointe."
+    },
+    "experiences": {
+      "title": "Projet de mobilité internationale",
+      "items": [
+        {
+          "year": "Printemps ou Été 2027",
+          "title": "Dernier projet de l'année - à définir",
+          "location": "Bristol, Royaume-Uni ou Toronto, Canada ou Hambourg, Allemagne",
+          "duration": "1 - 2 mois",
+          "type": "Projet de mobilité internationale",
+          "description": "A définir.",
+          "highlights": [
+            "-"
+          ],
+          "skills": ["-"],
+          "flag": "🇬🇧 ou 🇨🇦 ou 🇩🇪"
+        },
+        {
+          "year": "Été 2026",
+          "title": "Automatisation et observabilité des infrastructures réseau",
+          "location": "Madrid, Espagne",
+          "duration": "1 mois et demi",
+          "type": "Projet international",
+          "description": "-",
+          "highlights": [
+            "-"
+          ],
+          "skills": ["Langue Espagnole", "Gestion de Projet Internationale", "Communication Interculturelle"],
+          "flag": "🇪🇸"
+        },
+        {
+          "year": "2026",
+          "title": "Autocon 5 - Forum sur l'automatisation réseau",
+          "location": "TBD",
+          "duration": "1 semaine",
+          "type": "Conférence Internationale",
+          "description": "-",
+          "highlights": [
+            "-"
+          ],
+          "skills": ["-"],
+          "flag": "🏳️"
+        }
+      ]
+    },
+    "languages": {
+      "title": "Maîtrise des Langues",
+      "items": [
+        {
+          "language": "Français",
+          "level": "Langue Maternelle",
+          "proficiency": 100,
+          "description": "Maitrise orale et écrite.",
+          "flag": "🇫🇷"
+        },
+        {
+          "language": "Anglais",
+          "level": "Courant, maîtrise professionnelle (C1-C2)",
+          "proficiency": 90,
+          "description": "Maîtrise professionnelle avec spécialisation en anglais technique",
+          "flag": "🇬🇧"
+        },
+        {
+          "language": "Espagnol",
+          "level": "Fondamentaux/Intermédiaire(A2-B1)",
+          "proficiency": 40,
+          "description": "Compréhension écrite et orale intermédiaire, capacité d'échange simple.",
+          "flag": "🇪🇸"
+        }
+      ]
+    }
+  },
+  "career": {
+    "title": "Carrière & Expérience",
+    "description": "Mon parcours professionnel à travers stages, projets et développement de compétences en ingénierie réseau et DevOps",
+    "current": {
+      "title": "Poste Actuel",
+      "position": "Apprenti Ingénieur Automatisation",
+      "company": "Airbus (via SPIE ICS)",
+      "duration": "2024 - 2027",
+      "description": "Travail sur l'automatisation de l'infrastructure réseau et les outils d'infrastructure.",
+      "responsibilities": [
+        "Développement de scripts Python pour la configuration d'équipements réseau",
+        "Mise en œuvre de solutions de snapshot et de conformité pour l'infrastructure réseau critique",
+        "Collaboration avec des ingénieurs seniors en réseau et en  automatisation",
+        "Documentation et tests des processus d'automatisation réseau"
+      ],
+      "technologies": ["Python", "Linux", "Cisco", "Netmiko", "RESTCONF", "Git"]
+    },
+    "experience": {
+      "title": "Expérience Professionnelle",
+      "items": [
+        {
+          "year": "2024",
+          "position": "Stage Cybersécurité & Développement",
+          "company": "Communauté d'Agglomération du Grand Albigeois (80 mille habitants)",
+          "duration": "3 mois",
+          "type": "Stage",
+          "description": "Stage axé sur du développement d'application d'automatisation et de l'administration système et de la cybersécurité dans le secteur public.",
+          "achievements": [
+            "Aidé à atténuer l'impact d'une cyberattaque, en renforçant la sécurité de manière proactive et en coordonnant les actions avec les autorités nationales (CERT-FR, ANSSI), les équipes techniques, et le support international.",
+            "Développé un middleware en Python et NodeJS pour améliorer les capacités du VMS via une API REST, centralisant les alertes de capteurs hérités (MQTT) et facilitant la gestion par des non-techniciens via une interface web (PostgreSQL, tableaux de bord Node-RED).",
+            "Étudié l'architecture d'une API pour le contrôle d'accès physique et conçu une \"proof of concept\") pour l'implémentation LDAP."
+          ],
+          "skills": ["REST API", "Python", "Palo Alto", "MQTT", "NodeJS", "Node-RED", "PostgreSQL", "Firewalling"]
+        },
+        {
+          "year": "Ete 2020 & 2021",
+          "position": "Surveillant de baignade",
+          "company": "Base de loisirs Vère Grésigne",
+          "duration": "2 mois",
+          "type": "Temps plein | Emploi saisonnier",
+          "description": "Surveiller les activités de la base aquatique, assurer le respect des protocoles de sécurité et fournir une assistance aux visiteurs.",
+          "achievements": [
+            "Aider à la location de matériel pour les vacanciers (majoritairement des touristes anglophones).",
+            "Développer des compétences en travail d'équipe pour conseiller, aider et avertir les clients afin d'assurer leur sécurité."
+          ],
+          "skills": ["Anglais", "Diplomatie", "Leadership d'équipe", "Esprit d'équipe", "Gestion du stress"]
+        },
+        {
+          "year": "2021",
+          "position": "Employé Commercial",
+          "company": "Intermarché",
+          "duration": "4 mois",
+          "type": "Temps partiel",
+          "description": "Employé commercial. La majeure partie du travail consistait à faire les courses pour les clients, à charger les courses dans leurs coffres et à les conseiller à l'intérieur du magasin.",
+          "achievements": [
+            "-"
+          ],
+          "skills": ["Service Client", "Travail d'Équipe", "Gestion du Temps"]
+        }
+      ]
+    },
+    "skills": {
+      "title": "Compétences Techniques",
+      "categories": [
+        {
+          "name": "Technologies Réseau",
+          "items": ["BGP", "MPLS", "OSPF", "VLANs", "VPN", "VRFs", "VXLAN", "Cisco IOS", "Cisco NX-OS", "Palo Alto Basics"]
+        },
+        {
+          "name": "Automatisation & DevOps",
+          "items": ["Docker", "CI/CD", "AWS Basics", "Kubernetes basics"]
+        },
+        {
+          "name": "Sécurité",
+          "items": ["Configuration Firewall", "VPN", "Sécurité Réseau", "Tests de Pénétration"]
+        },
+        {
+          "name": "Programmation",
+          "items": ["Python", "Java", "JavaScript", "NodeJS", "HTML/CSS", "C", "Bash"]
+        },
+        {
+          "name": "Monitoring & Analyse",
+          "items": ["Wireshark", "Grafana", "Prometheus", "SNMP", "Wazuh Basics"]
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications & Formation",
+      "items": [
+        {
+          "name": "CCNA - Cisco Certified Network Associate",
+          "issuer": "Cisco",
+          "date": "2024",
+          "status": "En cours",
+          "description": "Certification réseau complète couvrant routage, commutation et sécurité réseau."
+        },
+        {
+          "name": "Python pour Ingénieurs Réseau",
+          "issuer": "Plateforme Formation en Ligne",
+          "date": "2023",
+          "status": "Terminé",
+          "description": "Formation spécialisée en automatisation Python pour infrastructure réseau."
+        },
+        {
+          "name": "Fondamentaux Sécurité Réseau",
+          "issuer": "ENSEEIHT",
+          "date": "2023",
+          "status": "Terminé",
+          "description": "Cours académique couvrant principes et meilleures pratiques de sécurité réseau."
+        }
+      ]
+    }
+  },
+  "engineering": {
+    "title": "Études d'Ingénieur",
+    "description": "Mon parcours académique en ingénierie réseau. Projets notables et spécialisation technique à l'ENSEEIHT.",
+    "journey": {
+      "title": "Quelques projets...",
+      "items": [
+        {
+          "year": "2025-2026 (en cours)",
+          "title": "Intent networking: automatisation réseau pilotée par l'IA",
+          "focus": "IA & Réseau & Python Fullstack",
+          "description": "Création d'une plateforme complète d'automatisation réseau pilotée par l'IA utilisant Python et des protocoles réseau modernes. Permet d'interroger l'état du réseau et d'automatiser les configurations en fonction d'intentions de haut niveau et de langage naturel.",
+          "skills": ["IA/ML", "Python", "Base de données de graphes", "Neo4J"]
+        },
+        {
+          "year": "2025",
+          "title": "Interface web de déploiement et monitoring réseau",
+          "focus": "Innovation",
+          "description": "Application de mes connaissances réseau au monde du web afin de créer une interface de déploiement et monitoring réseau avec pour moteur containerlab.",
+          "skills": ["containerlab", "RESTCONF", "gNMI", "Vue.JS","NodeJS","SDN"]
+        },
+        {
+          "year": "2025",
+          "title": "Bomber7 - A bomberman-inspired multiplayer game",
+          "focus": "Construction des Bases",
+          "description": "Jeu d'arcade multijoueur local, développé à partir de zéro en Java au sein d'une équipe de 6 personnes.",
+          "skills": ["Java", "SCRUM", "Agile", "OOP"]
+        }
+      ]
+    }
   }
 }

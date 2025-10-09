@@ -25,8 +25,8 @@
             
             <!-- Skills -->
             <div class="hero__skills">
-              <span class="hero__skill">ENSEEIHT</span>
-              <span class="hero__skill">Networks</span>
+              <span class="hero__skill">DevOps</span>
+              <span class="hero__skill">Network</span>
               <span class="hero__skill">Security</span>
             </div>
           </div>

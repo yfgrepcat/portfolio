@@ -7,36 +7,79 @@
           @click="$router.push('/')"
           class="back-btn"
         />
-        <h1 class="sustainability-title">{{ $t('sections.sustainability.title') }}</h1>
+        <h1 class="sustainability-title">{{ $t('sustainability.title') }}</h1>
       </div>
       
       <div class="sustainability-content">
-        <p class="sustainability-description">{{ $t('sections.sustainability.description') }}</p>
-        
-        <!-- Personal Values -->
-        <div class="values-section">
-          <h2 class="section-title">My Values & Commitment</h2>
-          <div class="values-grid">
-            <div 
-              v-for="(value, index) in personalValues" 
+        <p class="sustainability-description">{{ $t('sustainability.description') }}</p>
+
+
+        <!-- Educational Initiatives -->
+        <div class="education-section">
+          <h2 class="section-title">{{ $t('sustainability.education.title') }}</h2>
+          <p class="section-intro">{{ $t('sustainability.education.intro') }}</p>
+          <v-row>
+            <v-col 
+              cols="12" 
+              md="6" 
+              v-for="(initiative, index) in educationItems" 
               :key="index"
-              class="value-card"
             >
-              <div class="value-icon">
-                <v-icon :icon="value.icon" size="40" :color="value.color" />
-              </div>
-              <h3 class="value-title">{{ value.title }}</h3>
-              <p class="value-description">{{ value.description }}</p>
-            </div>
+              <v-card class="education-card" elevation="2">
+                <v-card-text>
+                  <div class="education-header">
+                    <v-icon :icon="initiative.icon" size="32" :color="initiative.color" />
+                    <div class="education-info">
+                      <h3 class="education-title">{{ initiative.title }}</h3>
+                      <div class="education-target">{{ initiative.target }}</div>
+                    </div>
+                  </div>
+                  <p class="education-description">{{ initiative.description }}</p>
+                  <div class="education-activities">
+                    <div class="activities-label">Activities:</div>
+                    <ul class="activities-list">
+                      <li v-for="activity in initiative.activities" :key="activity">{{ activity }}</li>
+                    </ul>
+                  </div>
+                  <div class="education-reflection">
+                    <strong>Personal reflection:</strong>
+                    <p class="reflection-text">{{ initiative.reflection }}</p>
+                  </div>
+                </v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+        </div>
+
+        <!-- Sustainable Practices -->
+        <div class="practices-section">
+          <h2 class="section-title">{{ $t('sustainability.practices.title') }}</h2>
+          <div class="practices-grid">
+            <v-card 
+              v-for="(practice, index) in practiceItems" 
+              :key="index"
+              class="practice-card"
+              elevation="1"
+            >
+              <v-card-text class="practice-content">
+                <div class="practice-icon">
+                  <v-icon :icon="practice.icon" size="28" :color="practice.color" />
+                </div>
+                <div class="practice-text">
+                  <h4 class="practice-title">{{ practice.title }}</h4>
+                  <p class="practice-description">{{ practice.description }}</p>
+                </div>
+              </v-card-text>
+            </v-card>
           </div>
         </div>
 
         <!-- Community Service -->
         <div class="service-section">
-          <h2 class="section-title">Community Service & Helping Others</h2>
+          <h2 class="section-title">{{ $t('sustainability.community.title') }}</h2>
           <div class="service-timeline">
             <div 
-              v-for="(service, index) in communityService" 
+              v-for="(service, index) in communityItems" 
               :key="index"
               class="service-item"
             >
@@ -62,89 +105,10 @@
                     :key="highlight"
                     class="highlight-item"
                   >
-                    <v-icon icon="mdi-heart" size="16" color="#e91e63" />
+                    <v-icon icon="mdi-heart" size="16" color="#4caf50" />
                     <span>{{ highlight }}</span>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Environmental Awareness -->
-        <div class="environment-section">
-          <h2 class="section-title">Environmental Consciousness & Small Actions</h2>
-          <div class="environment-grid">
-            <div 
-              v-for="(action, index) in environmentalActions" 
-              :key="index"
-              class="environment-card"
-            >
-              <div class="environment-image">
-                <v-icon :icon="action.icon" size="48" :color="action.color" />
-              </div>
-              <div class="environment-content">
-                <h3 class="environment-title">{{ action.title }}</h3>
-                <p class="environment-description">{{ action.description }}</p>
-                <div class="environment-examples">
-                  <div class="examples-label">Practical examples:</div>
-                  <div class="examples-list">
-                    <span 
-                      v-for="example in action.examples" 
-                      :key="example"
-                      class="example-tag"
-                    >
-                      {{ example }}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Educational Initiatives -->
-        <div class="education-section">
-          <h2 class="section-title">Education & Mentoring</h2>
-          <v-row>
-            <v-col cols="12" md="6" v-for="(initiative, index) in educationalInitiatives" :key="index">
-              <div class="education-card">
-                <div class="education-header">
-                  <v-icon :icon="initiative.icon" size="32" :color="initiative.color" />
-                  <h3 class="education-title">{{ initiative.title }}</h3>
-                </div>
-                <div class="education-target">{{ initiative.target }}</div>
-                <p class="education-description">{{ initiative.description }}</p>
-                <div class="education-activities">
-                  <div class="activities-label">Activities:</div>
-                  <ul class="activities-list">
-                    <li v-for="activity in initiative.activities" :key="activity">{{ activity }}</li>
-                  </ul>
-                </div>
-                <div class="education-reflection">
-                  <strong>Personal reflection:</strong>
-                  <p class="reflection-text">{{ initiative.reflection }}</p>
-                </div>
-              </div>
-            </v-col>
-          </v-row>
-        </div>
-
-        <!-- Sustainable Practices -->
-        <div class="practices-section">
-          <h2 class="section-title">Personal Sustainable Practices</h2>
-          <div class="practices-container">
-            <div 
-              v-for="(practice, index) in sustainablePractices" 
-              :key="index"
-              class="practice-item"
-            >
-              <div class="practice-icon">
-                <v-icon :icon="practice.icon" size="28" :color="practice.color" />
-              </div>
-              <div class="practice-content">
-                <h4 class="practice-title">{{ practice.title }}</h4>
-                <p class="practice-description">{{ practice.description }}</p>
               </div>
             </div>
           </div>
@@ -155,206 +119,30 @@
 </template>
 
 <script setup lang="ts">
+import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n()
+const { t, tm } = useI18n()
 
-const personalValues = [
-  {
-    icon: "mdi-account-heart",
-    title: "Empathy & Inclusion",
-    description: "Believing that technology should serve everyone, especially those who need it most. I strive to make my work accessible and inclusive.",
-    color: "#e91e63"
-  },
-  {
-    icon: "mdi-earth",
-    title: "Environmental Responsibility",
-    description: "Understanding that small actions add up. I try to be mindful of my environmental impact in both personal and professional choices.",
-    color: "#4caf50"
-  },
-  {
-    icon: "mdi-school",
-    title: "Knowledge Sharing",
-    description: "Believing that education and mentoring can break cycles of inequality. I enjoy helping others learn and grow.",
-    color: "#2196f3"
-  },
-  {
-    icon: "mdi-handshake",
-    title: "Community Building",
-    description: "Understanding that meaningful change happens through collaboration and building strong, supportive communities.",
-    color: "#ff9800"
-  }
-]
+// Get translated data
+const valueItems = computed(() => tm('sustainability.values.items'))
+const communityItems = computed(() => tm('sustainability.community.items'))
+const environmentalItems = computed(() => tm('sustainability.environmental.items'))
+const educationItems = computed(() => tm('sustainability.education.items'))
+const practiceItems = computed(() => tm('sustainability.practices.items'))
 
-const communityService = [
-  {
-    title: "Digital Accessibility Volunteer",
-    organization: "Local Disability Support Center",
-    duration: "2023 - Present",
-    icon: "mdi-wheelchair-accessibility",
-    description: "Helping individuals with disabilities learn to use technology and adapt digital tools to their needs. This work has taught me patience, creativity, and the importance of inclusive design.",
-    lessons: [
-      "The importance of patience and adaptive communication",
-      "How small technical adjustments can make huge differences",
-      "That accessibility benefits everyone, not just those with disabilities"
-    ],
-    highlights: [
-      "Helped 15+ individuals learn basic computer skills",
-      "Created simplified tutorials for screen reader software",
-      "Learned sign language basics to better communicate"
-    ]
-  },
-  {
-    title: "High School Mentoring Program",
-    organization: "ENSEEIHT Outreach Initiative",
-    duration: "2022 - Present",
-    icon: "mdi-account-supervisor",
-    description: "Mentoring high school students from underrepresented backgrounds who are interested in engineering. Focus on building confidence and providing guidance on educational pathways.",
-    lessons: [
-      "How to explain complex concepts in simple terms",
-      "The impact of representation and role models",
-      "That listening is often more important than advising"
-    ],
-    highlights: [
-      "Mentored 8 students over 2 years",
-      "3 mentees successfully entered engineering programs",
-      "Organized campus visits and hands-on workshops"
-    ]
-  },
-  {
-    title: "Senior Citizens Technology Support",
-    organization: "Local Community Center",
-    duration: "2021 - 2022",
-    icon: "mdi-account-supervisor-circle",
-    description: "Teaching elderly community members how to use smartphones, video calling, and basic internet services to stay connected with family, especially during COVID-19.",
-    lessons: [
-      "The value of human connection and technology's role in maintaining it",
-      "How to break down complex processes into simple steps",
-      "That age is never a barrier to learning"
-    ],
-    highlights: [
-      "Helped 25+ seniors connect with family remotely",
-      "Created easy-to-follow visual guides",
-      "Formed lasting friendships across generations"
-    ]
-  }
-]
-
-const environmentalActions = [
-  {
-    title: "Sustainable Computing",
-    description: "Making conscious choices about technology use and encouraging others to think about the environmental impact of our digital habits.",
-    icon: "mdi-laptop",
-    color: "#4caf50",
-    examples: [
-      "Extending laptop lifespan",
-      "Proper e-waste disposal",
-      "Energy-efficient coding",
-      "Digital minimalism"
-    ]
-  },
-  {
-    title: "Campus Green Initiatives",
-    description: "Participating in and promoting small-scale environmental improvements within the university community.",
-    icon: "mdi-school",
-    color: "#2196f3",
-    examples: [
-      "Organizing carpools",
-      "Promoting bike usage",
-      "Reducing paper consumption",
-      "Encouraging reusable containers"
-    ]
-  },
-  {
-    title: "Mindful Consumption",
-    description: "Making thoughtful choices about what I buy, use, and discard, while encouraging others to consider their consumption patterns.",
-    icon: "mdi-recycle",
-    color: "#ff9800",
-    examples: [
-      "Buying second-hand electronics",
-      "Repairing instead of replacing",
-      "Sharing resources with peers",
-      "Minimizing single-use items"
-    ]
-  }
-]
-
-const educationalInitiatives = [
-  {
-    title: "Code for Good Workshops",
-    target: "Middle & High School Students",
-    icon: "mdi-code-tags",
-    color: "#2196f3",
-    description: "Organizing programming workshops that teach basic coding skills while highlighting how technology can be used to solve social and environmental problems.",
-    activities: [
-      "Teaching Scratch programming with environmental themes",
-      "Creating simple apps for community problems",
-      "Discussing ethics in technology development",
-      "Encouraging girls and underrepresented minorities in STEM"
-    ],
-    reflection: "These workshops reminded me why I fell in love with programming in the first place - the ability to create solutions that help people. Seeing young students light up when they realize they can build something meaningful is incredibly rewarding."
-  },
-  {
-    title: "Tech Literacy for All",
-    target: "Adults with Learning Difficulties",
-    icon: "mdi-human-greeting",
-    color: "#9c27b0",
-    description: "Volunteering with a local organization to help adults with learning difficulties develop basic digital literacy skills for employment and daily life.",
-    activities: [
-      "One-on-one tutoring sessions",
-      "Creating customized learning materials",
-      "Teaching job-relevant computer skills",
-      "Building confidence with technology"
-    ],
-    reflection: "This experience taught me that everyone learns differently and at their own pace. It's made me a more patient teacher and helped me appreciate the diverse ways people process information."
-  }
-]
-
-const sustainablePractices = [
-  {
-    title: "Mindful Transportation",
-    description: "Using public transport, cycling, or walking when possible. Carpooling for longer trips.",
-    icon: "mdi-bus",
-    color: "#4caf50"
-  },
-  {
-    title: "Digital Minimalism",
-    description: "Being intentional about technology use, avoiding unnecessary upgrades, and maintaining devices well.",
-    icon: "mdi-cellphone",
-    color: "#2196f3"
-  },
-  {
-    title: "Waste Reduction",
-    description: "Minimizing food waste, using reusable containers, and properly sorting recycling.",
-    icon: "mdi-delete",
-    color: "#ff9800"
-  },
-  {
-    title: "Energy Consciousness",
-    description: "Being mindful of electricity usage, using energy-efficient settings, and unplugging devices.",
-    icon: "mdi-lightning-bolt",
-    color: "#ffc107"
-  },
-  {
-    title: "Local & Seasonal",
-    description: "Supporting local businesses when possible and being mindful of seasonal food choices.",
-    icon: "mdi-store",
-    color: "#8bc34a"
-  },
-  {
-    title: "Sharing Economy",
-    description: "Borrowing, lending, and sharing resources with friends and community members.",
-    icon: "mdi-share-variant",
-    color: "#9c27b0"
-  }
-]
+onMounted(() => {
+  console.log('Sustainability component mounted')
+  console.log('Value items count:', valueItems.value.length)
+  console.log('Community items count:', communityItems.value.length)
+})
 </script>
 
 <style scoped>
 .sustainability-page {
   min-height: 100vh;
   padding: 2rem 0;
-  background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+  background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
   position: relative;
 }
 
@@ -365,7 +153,7 @@ const sustainablePractices = [
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20zm0 0c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234caf50' fill-opacity='0.03'%3E%3Cpath d='M30 30c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20zm0 0c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   pointer-events: none;
 }
 
@@ -381,27 +169,28 @@ const sustainablePractices = [
 .sustainability-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .sustainability-description {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin-bottom: 3rem;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
 
 .back-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
 }
 
 .section-title {
   font-size: 2rem;
   font-weight: 600;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
@@ -415,39 +204,42 @@ const sustainablePractices = [
   z-index: 1;
 }
 
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
 .value-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  background: white;
 }
 
 .value-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .value-icon {
+  text-align: center;
   margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .value-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .value-description {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
+  text-align: center;
 }
 
 /* Community Service */
@@ -463,18 +255,20 @@ const sustainablePractices = [
 }
 
 .service-item {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  background: white;
+  border-radius: 16px;
   padding: 2rem;
   margin-bottom: 2rem;
   display: flex;
   gap: 1.5rem;
   transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .service-item:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .service-icon {
@@ -486,7 +280,7 @@ const sustainablePractices = [
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
 }
 
 .service-content {
@@ -505,30 +299,33 @@ const sustainablePractices = [
 .service-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
 }
 
 .service-duration {
-  color: #ffd700;
+  color: #4caf50;
   font-weight: 500;
   font-size: 0.9rem;
+  background: rgba(76, 175, 80, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
 }
 
 .service-organization {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.7);
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
 .service-description {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
 .service-impact {
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .impact-list {
@@ -538,8 +335,9 @@ const sustainablePractices = [
 
 .impact-list li {
   margin-bottom: 0.25rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .service-highlights {
@@ -552,7 +350,7 @@ const sustainablePractices = [
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.7);
   font-size: 0.9rem;
 }
 
@@ -563,65 +361,58 @@ const sustainablePractices = [
   z-index: 1;
 }
 
-.environment-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
 .environment-card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  overflow: hidden;
+  height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  background: white;
 }
 
 .environment-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.environment-image {
-  padding: 2rem;
+.environment-icon {
   text-align: center;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
-}
-
-.environment-content {
-  padding: 1.5rem 2rem 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(76, 175, 80, 0.05);
+  border-radius: 16px;
 }
 
 .environment-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1b5e20;
+  color: rgba(0, 0, 0, 0.87);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .environment-description {
-  color: #424242;
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .examples-label {
   font-weight: 600;
-  color: #2e7d32;
-  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .examples-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  justify-content: center;
 }
 
-.example-tag {
-  background: #e8f5e8;
-  color: #2e7d32;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.example-chip {
+  margin-bottom: 0.5rem;
 }
 
 /* Educational Initiatives */
@@ -632,51 +423,60 @@ const sustainablePractices = [
 }
 
 .education-card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
   height: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  background: white;
 }
 
 .education-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .education-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
+.education-info {
+  flex: 1;
+}
+
 .education-title {
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
   font-size: 1.25rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .education-target {
-  color: #ffd700;
+  color: #4caf50;
   font-weight: 500;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  background: rgba(76, 175, 80, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  display: inline-block;
 }
 
 .education-description {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.6);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
 .activities-label {
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .activities-list {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.6);
   padding-left: 1rem;
   margin-bottom: 1rem;
 }
@@ -684,16 +484,18 @@ const sustainablePractices = [
 .activities-list li {
   margin-bottom: 0.25rem;
   font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .education-reflection {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .reflection-text {
   margin-top: 0.5rem;
   font-style: italic;
   line-height: 1.5;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 /* Sustainable Practices */
@@ -703,45 +505,66 @@ const sustainablePractices = [
   z-index: 1;
 }
 
-.practices-container {
+.practices-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 
-.practice-item {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 1.5rem;
+.practice-card {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  background: white;
+}
+
+.practice-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.practice-content {
   display: flex;
   align-items: center;
   gap: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.practice-item:hover {
-  transform: translateY(-3px);
+  padding: 1.5rem !important;
 }
 
 .practice-icon {
   flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.practice-text {
+  flex: 1;
 }
 
 .practice-title {
-  color: white;
+  color: rgba(0, 0, 0, 0.87);
   font-weight: 600;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 }
 
 .practice-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 0.9rem;
   line-height: 1.4;
+  margin: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .sustainability-title {
+    font-size: 2rem;
+  }
+  
   .service-item {
     flex-direction: column;
     text-align: center;
@@ -750,11 +573,22 @@ const sustainablePractices = [
   .service-header {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
   
-  .practice-item {
+  .education-header {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+  }
+  
+  .practice-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .practices-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

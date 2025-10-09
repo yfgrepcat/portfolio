@@ -137,7 +137,7 @@ const navigateToSection = (route: string) => {
 .sections__col:nth-child(5) { animation-delay: 0.5s; }
 
 .sections__card {
-  height: 300px;
+  height: 330px;
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -169,7 +169,7 @@ const navigateToSection = (route: string) => {
 }
 
 .sections__card--engineering .sections__card-overlay {
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(139, 195, 74, 0.8));
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.9), rgba(255, 193, 7, 0.8));
 }
 
 .sections__card--international .sections__card-overlay {
@@ -177,7 +177,7 @@ const navigateToSection = (route: string) => {
 }
 
 .sections__card--sustainability .sections__card-overlay {
-  background: linear-gradient(135deg, rgba(255, 152, 0, 0.9), rgba(255, 193, 7, 0.8));
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(139, 195, 74, 0.8));
 }
 
 .sections__card--activities .sections__card-overlay {
