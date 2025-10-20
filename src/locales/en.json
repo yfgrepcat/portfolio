@@ -9,6 +9,15 @@
     "buttons": {
       "contact": "Get In Touch",
       "work": "View My Work"
+    },
+    "cv": {
+      "englishLabel": "Download English CV",
+      "english": "/src/assets/CV_EN_secret.pdf",
+      "frenchLabel": "Download French CV",
+      "french": "/src/assets/CV_FR_secret.pdf"
+    },
+    "blog": {
+      "label": "Visit My Technical Blog (/!\\ under construction)"
     }
   },
   "sections": {
@@ -34,6 +43,10 @@
     "activities": {
       "title": "Sports & Activities",
       "description": "Athletic pursuits, creative hobbies, leadership roles, and personal interests outside academics."
+    },
+    "projects": {
+      "title": "Project Portfolio",
+      "description": "Dive deep into my technical projects with detailed case studies, images, and explanations"
     }
   },
   "activities": {
@@ -223,7 +236,7 @@
         },
         {
           "title": "Digital Minimalism",
-          "description": "Being intentional about technology use, avoiding unnecessary upgrades, and maintaining devices well.",
+          "description": "Reducing unnecessary tech consumption, avoiding needless upgrades, and maintaining devices well.",
           "icon": "mdi-cellphone",
           "color": "#2196f3"
         },
@@ -418,13 +431,13 @@
         },
         {
           "name": "Neo4J Certified Professional",   
-          "issuer": "Online Training Platform",
+          "issuer": "Neo4J Online Training Platform",
           "date": "2025",
           "status": "In Progress",
           "description": "Specialized training in graph database management and query optimization."
         },
         {
-          "name": "C1 Cambridge English Certificate (CAE)",
+          "name": "C1 Cambridge English Certificate",
           "issuer": "Cambridge Assessment English",
           "date": "2021",
           "status": "Completed",
@@ -455,12 +468,215 @@
         },
         {
           "year": "2025",
+          "title": "Graph-coursup - Implementing an admission algorithm using graph theory",
+          "focus": "Algorithm Design",
+          "description": "Implementing a stable matching algorithm for the French higher education admission system (Parcoursup) using graph theory concepts in Python.",
+          "skills": ["Python", "Graph Theory", "Algorithm Design"]
+        },
+        {
+          "year": "2025",
           "title": "Bomber7 - A bomberman-inspired multiplayer game",
           "focus": "Foundation Building",
           "description": "Multiplayer local game, developped from scratch in Java in a team of 6.",
           "skills": ["Java", "SCRUM", "Agile", "OOP"]
+        },
+        {
+          "year": "2024",
+          "title": "Enterprise Grade Network Infrastructure Design",
+          "focus": "Network Architecture",
+          "description": "Designing a scalable, resilient and modern network architecture for a multinational corporation branch office.",
+          "skills": ["Network Design", "SD-WAN", "802.1x", "VRF", "Arista", "Juniper", "Fortinet"]
         }
       ]
+    },
+    "projectsCTA": {
+      "title": "Explore My Project Portfolio",
+      "description": "Dive deeper into my technical projects with detailed case studies, images, and complete documentation. See how I approach challenges, implement solutions, and deliver results.",
+      "button": "View Project Portfolio"
     }
+  },
+  "projects": {
+    "title": "Project Portfolio",
+    "description": "Explore detailed case studies of my technical projects, complete with challenges, solutions, and visual documentation",
+    "filters": {
+      "all": "All Projects",
+      "Network": "Network",
+      "DevOps": "DevOps",
+      "Security": "Security",
+      "Web": "Web Development",
+      "IoT": "IoT",
+      "Python": "Python development",
+      "Java": "Java development"
+    },
+    "categories": {
+      "Network": "Network",
+      "DevOps": "DevOps",
+      "Security": "Security",
+      "Web": "Web Development",
+      "IoT": "IoT",
+      "Python": "Python Development",
+      "Java": "Java Development"
+    },
+    "featuredLabel": "Featured Project",
+    "highlights": "Key Features",
+    "challenge": "The Challenge",
+    "solution": "My Solution",
+    "learnings": "Key Learnings",
+    "viewProject": "View Details",
+    "items": [
+      {
+        "title": "NetProbe - A network monitoring web application",
+        "category": "Network",
+        "featured": true,
+        "date": "2025",
+        "description": "A full-stack web application for automated network deployment, monitoring, using modern network protocols and containerized environments. Leveraging gNMI streaming telemtry and containerlab to create ad-hoc topologies and monitor its status.",
+        "challenge": "Creating a user-friendly interface for network engineers to deploy and monitor complex network topologies without deep knowledge of underlying protocols and tools.",
+        "solution": "Developed a Vue.js frontend with a Node.js backend that interfaces with containerlab for topology deployment and gNMI for real-time telemetry. Implemented features like real-time status updates, alerting, and live topology overview.",
+        "technologies": ["Vue.js", "Node.js", "gNMI", "containerlab", "Docker"],
+        "highlights": [
+          "Real-time network telemetry and alerting",
+          "User-friendly web interface",
+          "Scalable architecture for future enhancements"
+        ],
+        "learnings": "Gained hands-on experience with modern network protocols and full-stack web development. Improved skills in asynchronous programming and real-time data handling.",
+        "image": "",
+        "gallery": [
+          {
+            "src": "src/assets/netprob_screen1.png",
+            "caption": "Network topology visualization dashboard"
+          }
+        ],
+        "links": [
+          {
+            "text": "Code Repository",
+            "url": "https://github.com/t70n/netprobe/tree/main",
+            "icon": "mdi-github"
+          },
+          {
+            "text": "Architecture Diagram",
+            "url": "#",
+            "icon": "mdi-sitemap"
+          }
+        ]
+      },
+      {
+        "title": "Sustainable Homelab Automation & Self-Hosting",
+        "category": "DevOps",
+        "date": "2023-2025",
+        "description": "Designing and implementing a home lab environment for self-hosting services and automating home IoT devices. Focused on network architecture, containerization, and home automation using Home Assistant.",
+        "technologies": ["Proxmox", "InfraHub", "Docker", "Kubernetes", "Cisco", "Home Assistant", "Zigbee", "MQTT", "LACP"],
+        "highlights": [
+          "Automated deployment of home services",
+          "Seamless integration of IoT devices",
+          "Scalable and flexible architecture"
+        ],
+        "image": "src/assets/Homelab_1.png",
+        "gallery": [
+          {
+            "src": "src/assets/Homelab_1.png",
+            "caption": "Picture of my old infrastructure making use of refurbished enterprise hardware. [To be changed]"
+          }
+        ]
+      },
+      {
+        "title": "Graph-coursup - Implementing an admission algorithm using graph theory",
+        "category": "Python",
+        "date": "2025",
+        "description": "Implemented a stable matching algorithm for the French higher education admission system (Parcoursup) using graph theory concepts in Python. A rework is in progress to integrate a web interface and visualizations using graph database Neo4J and a python web framework (Django or FastAPI).",
+        "technologies": ["Python", "Graph Theory", "Algorithm Design"],
+        "highlights": [
+          "Implemented Gale-Shapley stable matching algorithm",
+          "Simulated real-world admission scenarios",
+          "Analyzed algorithm performance and fairness"
+        ],
+        "image": "src/assets/GraphCoursup_1.png",
+        "gallery": [
+          {
+            "src": "src/assets/GraphCoursup_1.png",
+            "caption": "Graph representation of students and programs"
+          }
+        ],
+        "links": [
+          {
+            "text": "Code Repository",
+            "url": "https://github.com/yfgrepcat/Graph-coursup",
+            "icon": "mdi-github"
+          }
+        ]
+      },
+      {
+        "title": "Bomber7 - A bomberman-inspired multiplayer game",
+        "category": "Java",
+        "date": "2025",
+        "description": "A local multiplayer arcade game developed from scratch in Java within a team of 6 people. Focused on OOP principles and agile methodologies.",
+        "technologies": ["Java", "OOP", "Agile", "SCRUM"],
+        "highlights": [
+          "Multiplayer local gameplay",
+          "Robust OOP architecture",
+          "Agile development process"
+        ],
+        "image": "src/assets/Bomber7_1.png",
+        "gallery": [
+          {
+            "src": "src/assets/Bomber7_1.png",
+            "caption": "Logo and front page of the report for the project"
+          },
+          {
+            "src": "src/assets/Bomber7_2.png",
+            "caption": "Maps designed for the game"
+          }
+        ],
+        "links": [
+          {
+            "text": "Code Repository",
+            "url": "https://github.com/Stephane-Lpt/bomber7",
+            "icon": "mdi-github"
+          },
+          {
+            "text": "Project Report",
+            "url": "https://github.com/Stephane-Lpt/bomber7/blob/main/livrables/rapport.pdf",
+            "icon": "mdi-file-document"
+          }
+        ]
+
+      },
+      {
+        "title": "Enterprise Grade Network Infrastructure Design",
+        "category": "Network",
+        "date": "2024",
+        "description": "Designed a scalable, resilient, and modern network architecture for a multinational corporation branch office. Focused on SD-WAN, security, and high availability.",
+        "technologies": ["Cisco", "Fortinet", "SD-WAN", "802.1x", "VRF"],
+        "highlights": [
+          "Scalable network design",
+          "High availability solutions",
+          "Comprehensive security measures"
+        ],
+        "image": "src/assets/Network_1.png",
+        "links": [
+          {}
+        ]
+      },
+      {
+        "title": "Portfolio Website",
+        "category": "Web",
+        "date": "2025",
+        "description": "Designed and developed a responsive portfolio website using Vue.js and Vuetify to showcase professional experience, projects, and technical skills.",
+        "technologies": ["Vue.js", "TypeScript", "Vuetify", "i18n", "SCSS"],
+        "highlights": [
+          "Responsive design for all devices",
+          "Multi-language support",
+          "Interactive project showcase",
+          "Dynamic content management"
+        ],
+        "image": "src/assets/Portfolio_1.png",
+        "links": [
+          {
+            "text": "Source Code",
+            "url": "#",
+            "icon": "mdi-code-tags"
+          }
+        ]
+      }
+    ]
   }
 }

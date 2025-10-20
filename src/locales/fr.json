@@ -9,6 +9,15 @@
     "buttons": {
       "contact": "Me Contacter",
       "work": "Voir Mon Travail"
+    },
+    "cv": {
+      "englishLabel": "Téléchargez mon CV en anglais",
+      "english": "/src/assets/CV_EN_secret.pdf",
+      "frenchLabel": "Téléchargez mon CV en français",
+      "french": "/src/assets/CV_FR_secret.pdf"
+    },
+    "blog": {
+      "label": "Visiter Mon Blog (/!\\ en construction)"
     }
   },
   "sections": {
@@ -21,7 +30,12 @@
     },
     "engineering": {
       "title": "Études d'Ingénieur",
-      "description": "Parcours académique, projets techniques et spécialisation en ingénierie réseau à l'ENSEEIHT."
+      "description": "Parcours académique, projets techniques et spécialisation en ingénierie réseau à l'ENSEEIHT.",
+      "projectsCTA": {
+        "title": "Explorez Mon Portfolio de Projets",
+        "description": "Plongez plus profondément dans mes projets techniques avec des études de cas détaillées, des images et une documentation complète. Découvrez comment j'aborde les défis, mets en œuvre des solutions et obtiens des résultats.",
+        "button": "Voir Portfolio de Projets"
+      }
     },
     "international": {
       "title": "Expérience Internationale",
@@ -34,6 +48,158 @@
     "activities": {
       "title": "Sports & Activités",
       "description": "Activités sportives, loisirs créatifs, rôles de leadership et intérêts personnels hors académiques."
+    },
+  "projects": {
+    "title": "Project Portfolio",
+    "description": "Explore detailed case studies of my technical projects, complete with challenges, solutions, and visual documentation",
+    "filters": {
+      "all": "All Projects",
+      "Network": "Network",
+      "DevOps": "DevOps",
+      "Security": "Security",
+      "Web": "Web Development",
+      "IoT": "IoT",
+      "Python": "Python development",
+      "Java": "Java development"
+     },
+    "categories": {
+      "Network": "Network",
+      "DevOps": "DevOps",
+      "Security": "Security",
+      "Web": "Web Development",
+      "IoT": "IoT",
+      "Python": "Python Development",
+      "Java": "Java Development"
+      },
+      "featuredLabel": "Projet Vedette",
+      "highlights": "Fonctionnalités Clés",
+      "challenge": "Le Défi",
+      "solution": "Ma Solution",
+      "learnings": "Apprentissages Clés",
+      "viewProject": "Voir les Détails",
+      "items": [
+        {
+          "title": "NetProbe - Application web de monitoring réseau",
+          "category": "Network",
+          "featured": true,
+          "date": "2025",
+          "description": "Application web full-stack pour le déploiement automatisé et le monitoring réseau, utilisant des protocoles réseau modernes et des environnements containerisés. Exploite la télémétrie en streaming gNMI et containerlab pour créer des topologies ad-hoc et surveiller leur état.",
+          "technologies": ["gNMI", "containerlab", "Vue.js", "NodeJS", "Express"],
+          "highlights": [
+            "Déploiement automatisé de topologies réseau",
+            "Surveillance en temps réel avec télémétrie gNMI",
+            "Interface utilisateur interactive",
+            "Utilisation de containerlab pour la virtualisation réseau"
+          ],
+          "image": "",
+          "links": [
+            {
+              "title": "Documentation",
+              "url": "#",
+              "icon": "mdi-file-document"
+            },
+            {
+              "title": "Code Source",
+              "url": "#",
+              "icon": "mdi-code-tags"
+            }
+          ]
+        },
+        {
+          "title": "Graph-coursup - Implémentation d'un algorithme d'admission utilisant la théorie des graphes",
+          "category": "Python",
+          "date": "2025",
+          "description": "Implémentation d'un algorithme de correspondance stable pour le système d'admission dans l'enseignement supérieur français (Parcoursup) en utilisant des concepts de théorie des graphes en Python. Une refonte est en cours pour intégrer une interface web et des visualisations utilisant la base de données graphe Neo4J et un framework web python (Django ou FastAPI).",
+          "technologies": ["Python", "Théorie des Graphes", "Conception d'Algorithmes"],
+          "highlights": [
+            "Implémentation de l'algorithme de Gale-Shapley",
+            "Modélisation des préférences avec des graphes",
+            "Analyse de la stabilité des correspondances",
+            "Préparation pour une interface web avec Neo4J"
+          ],
+          "image": "",
+          "links": [
+            {
+              "title": "Documentation",
+              "url": "#",
+              "icon": "mdi-file-document"
+            },
+            {
+              "title": "Code Source",
+              "url": "#",
+              "icon": "mdi-code-tags"
+            }
+          ]
+        },
+        {
+          "title": "Bomber7 - Un jeu multijoueur inspiré de bomberman",
+          "category": "Java",
+          "date": "2025",
+          "description": "Un jeu d'arcade multijoueur local développé from scratch en Java au sein d'une équipe de 6 personnes. Axé sur les principes de la POO et les méthodologies agiles.",
+          "technologies": ["Java", "POO", "Agile", "SCRUM"],
+          "highlights": [
+            "Mécaniques de jeu inspirées de Bomberman",
+            "Architecture orientée objet",
+            "Développement en équipe avec Scrum",
+            "Interface utilisateur graphique avec Swing"
+          ],
+          "image": "",
+          "links": [
+            {
+              "title": "Documentation",
+              "url": "#",
+              "icon": "mdi-file-document"
+            },
+            {
+              "title": "Code Source",
+              "url": "#",
+              "icon": "mdi-code-tags"
+            }
+          ]
+        },
+        {
+          "title": "Conception d'une infrastructure réseau d'entreprise",
+          "category": "Network",
+          "date": "2024",
+          "description": "Conception d'une architecture réseau évolutive, résiliente et moderne pour une filiale d'une multinationale. Axée sur le SD-WAN, la sécurité et la haute disponibilité.",
+          "technologies": ["Cisco", "Fortinet", "SD-WAN", "802.1x", "VRF"],
+          "highlights": [
+            "Architecture réseau évolutive",
+            "Intégration SD-WAN",
+            "Mise en œuvre de la sécurité 802.1x",
+            "Conception pour la haute disponibilité"
+          ],
+          "image": "",
+          "links": [
+            {
+              "title": "Documentation",
+              "url": "#",
+              "icon": "mdi-file-document"
+            }
+          ]
+        },
+        {
+          "title": "Site Web Portfolio",
+          "category": "Web",
+          "date": "2024",
+          "description": "Conception et développement d'un site web portfolio responsive utilisant Vue.js et Vuetify pour présenter l'expérience professionnelle, les projets et les compétences techniques.",
+          "technologies": ["Vue.js", "TypeScript", "Vuetify", "i18n", "SCSS"],
+          "highlights": [
+            "Design responsive pour tous les appareils",
+            "Support multi-langues",
+            "Présentation interactive de projets",
+            "Gestion dynamique de contenu"
+          ],
+          "image": "",
+          "links": [
+            {
+              "text": "Code Source",
+              "url": "#",
+              "icon": "mdi-code-tags"
+            }
+          ]
+        }
+      ]
     }
   },
   "activities": {
@@ -81,7 +247,7 @@
           ],
           "skills": ["Endurance", "Clarté Mentale", "Discipline", "Gestion du Stress"],
           "impact": "Les sports de combat m'ont aidé à développer ma confiance en moi et ma capacité à rester calme sous pression, compétences essentielles dans des situations de crise.",
-          "icon": "mdi-swim",
+          "icon": "mdi-karate",
           "color": "#ff0000"
         }
       ]
@@ -223,7 +389,7 @@
         },
         {
           "title": "Minimalisme Numérique",
-          "description": "Être intentionnel sur l'utilisation de la technologie, éviter les mises à niveau inutiles et bien entretenir les appareils.",
+          "description": "Réduire l'achat de nouveaux appareils, recycler correctement l'électronique et optimiser l'utilisation des ressources numériques.",
           "icon": "mdi-cellphone",
           "color": "#2196f3"
         },
@@ -332,7 +498,7 @@
       "responsibilities": [
         "Développement de scripts Python pour la configuration d'équipements réseau",
         "Mise en œuvre de solutions de snapshot et de conformité pour l'infrastructure réseau critique",
-        "Collaboration avec des ingénieurs seniors en réseau et en  automatisation",
+        "Collaboration avec des ingénieurs seniors en réseau",
         "Documentation et tests des processus d'automatisation réseau"
       ],
       "technologies": ["Python", "Linux", "Cisco", "Netmiko", "RESTCONF", "Git"]
@@ -410,32 +576,28 @@
       "title": "Certifications & Formation",
       "items": [
         {
-          "name": "CCNA - Cisco Certified Network Associate",
+          "name": "CCNP ENARSI - Cisco Certified Network Professional",
           "issuer": "Cisco",
-          "date": "2024",
+          "date": "2025",
           "status": "En cours",
-          "description": "Certification réseau complète couvrant routage, commutation et sécurité réseau."
+          "description": "Certification avancée en ingénierie réseau, couvrant des sujets tels que le routage, la commutation, la sécurité et les services réseau."
         },
         {
-          "name": "Python pour Ingénieurs Réseau",
-          "issuer": "Plateforme Formation en Ligne",
-          "date": "2023",
-          "status": "Terminé",
-          "description": "Formation spécialisée en automatisation Python pour infrastructure réseau."
+          "name": "Neo4J Certified Professional",
+          "issuer": "Platforme en ligne Neo4J",
+          "date": "2025",
+          "status": "En cours",
+          "description": "Formation spécialisée en gestion de bases de données graphe et optimisation des requêtes."
         },
         {
-          "name": "Fondamentaux Sécurité Réseau",
-          "issuer": "ENSEEIHT",
-          "date": "2023",
+          "name": "C1 Cambridge English Certificate",
+          "issuer": "Cambridge Assessment English",
+          "date": "2021",
           "status": "Terminé",
-          "description": "Cours académique couvrant principes et meilleures pratiques de sécurité réseau."
+          "description": "Certification attestant d'une maîtrise professionnelle de l'anglais, avec des compétences avancées en compréhension écrite, orale et expression écrite et orale."
         }
       ]
-    }
-  },
-  "engineering": {
-    "title": "Études d'Ingénieur",
-    "description": "Mon parcours académique en ingénierie réseau. Projets notables et spécialisation technique à l'ENSEEIHT.",
+    },
     "journey": {
       "title": "Quelques projets...",
       "items": [
@@ -459,6 +621,13 @@
           "focus": "Construction des Bases",
           "description": "Jeu d'arcade multijoueur local, développé à partir de zéro en Java au sein d'une équipe de 6 personnes.",
           "skills": ["Java", "SCRUM", "Agile", "OOP"]
+        },
+        {
+          "year": "2024",
+          "title": "Conception d'une infrastructure réseau d'entreprise",
+          "focus": "Architecture Réseau",
+          "description": "Conception d'une architecture réseau évolutive, résiliente et moderne pour une filiale d'une multinationale.",
+          "skills": ["Conception Réseau", "SD-WAN", "802.1x", "VRF", "Arista", "Juniper", "Fortinet"]
         }
       ]
     }

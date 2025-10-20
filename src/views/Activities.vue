@@ -379,7 +379,7 @@ onMounted(() => {
   gap: 1rem;
   margin-bottom: 1rem;
 }
-
+ 
 .creative-icon {
   width: 60px;
   height: 60px;

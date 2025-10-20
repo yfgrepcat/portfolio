@@ -3,7 +3,18 @@
     <v-container class="hero__container">
       <v-row align="center" justify="center" class="fill-height">
         <v-col cols="12" md="8" class="text-center">
-          
+          <!-- Blog Button -->
+          <!-- <v-btn
+            color="secondary"
+            variant="elevated"
+            size="large"
+            prepend-icon="mdi-web"
+            class="blog-btn mt-4"
+            block
+          >
+            {{ $t('hero.blog.label') }}
+          </v-btn> -->
+
           <!-- Profile -->
           <div class="hero__profile">
             <v-avatar size="120" class="hero__avatar">
@@ -31,28 +42,58 @@
             </div>
           </div>
           
-          <!-- Actions -->
-          <div class="hero__actions">
-            <v-btn
-              color="primary"
-              size="large"
-              class="hero__btn-primary"
-              href="#contact"
-              prepend-icon="mdi-send"
-            >
-              {{ $t('hero.buttons.contact') }}
-            </v-btn>
-            
-            <v-btn
-              variant="outlined"
-              color="primary"
-              size="large"
-              class="hero__btn-secondary"
-              href="#sections"
-              prepend-icon="mdi-eye"
-            >
-              {{ $t('hero.buttons.work') }}
-            </v-btn>
+          <!-- Additional Buttons -->
+          <div class="additional-buttons mt-6">
+            <div class="cv-buttons">
+              <v-btn
+                color="primary"
+                variant="tonal"
+                size="large"
+                prepend-icon="mdi-file-document"
+                class="cv-btn mr-2"
+                :href="$t('hero.cv.english')"
+                target="_blank"
+              >
+                {{ $t('hero.cv.englishLabel') }}
+              </v-btn>
+              
+              <v-btn
+                color="primary"
+                variant="tonal"
+                size="large"
+                prepend-icon="mdi-file-document"
+                class="cv-btn"
+                :href="$t('hero.cv.french')"
+                target="_blank"
+              >
+                {{ $t('hero.cv.frenchLabel') }}
+              </v-btn>
+            </div>
+
+            <!-- Actions -->
+            <div class="hero__actions">
+              <v-btn
+                color="primary"
+                size="large"
+                class="hero__btn-primary"
+                href="mailto:work@francoispro.com"
+                prepend-icon="mdi-send"
+              >
+                {{ $t('hero.buttons.contact') }}
+              </v-btn>
+              
+              <v-btn
+                variant="outlined"
+                color="primary"
+                size="large"
+                class="hero__btn-secondary"
+                href="#sections"
+                prepend-icon="mdi-eye"
+              >
+                {{ $t('hero.buttons.work') }}
+              </v-btn>
+            </div>
+
           </div>
           
           <!-- Language Toggle -->
@@ -279,6 +320,46 @@ onMounted(() => {
   box-shadow: 0 8px 20px rgba(25, 118, 210, 0.15);
 }
 
+/* Additional Buttons Section - Updated */
+.additional-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  animation: slideUp 0.8s ease-out 1s both;
+}
+
+.cv-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.cv-btn {
+  min-width: 180px;
+  font-weight: 500;
+}
+
+.blog-btn {
+  width: 100%;
+  max-width: 400px;
+  background-color: #4caf50 !important;
+  color: white !important;
+  font-weight: 600;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.3);
+}
+
 /* Language Section */
 .hero__language {
   margin-bottom: 2rem;
@@ -358,6 +439,21 @@ onMounted(() => {
   
   .hero__skills {
     justify-content: center;
+  }
+
+  .cv-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cv-btn {
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .blog-btn {
+    max-width: 240px;
   }
 }
 

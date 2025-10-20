@@ -42,6 +42,17 @@
           </v-card>
         </div>
       </div>
+      <!-- Blog Button -->
+      <v-btn
+        color="secondary"
+        variant="elevated"
+        size="large"
+        prepend-icon="mdi-web"
+        class="blog-btn mt-4"
+        block
+      >
+        {{ $t('hero.blog.label') }}
+      </v-btn>
     </v-container>
   </section>
 </template>
@@ -78,6 +89,11 @@ const sections = [
     id: 'activities',
     route: '/activities',
     icon: 'mdi-run'
+  },
+  {
+    id: 'projects',
+    route: '/projects',
+    icon: 'mdi-code-braces'
   }
 ]
 
@@ -182,6 +198,10 @@ const navigateToSection = (route: string) => {
 
 .sections__card--activities .sections__card-overlay {
   background: linear-gradient(135deg, rgba(244, 67, 54, 0.9), rgba(233, 30, 99, 0.8));
+}
+
+.sections__card--projects .sections__card-overlay {
+  background: linear-gradient(135deg, rgba(3, 169, 244, 0.9), rgba(0, 188, 212, 0.8));
 }
 
 .sections__card-content {

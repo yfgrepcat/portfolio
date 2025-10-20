@@ -43,6 +43,22 @@
             </div>
           </div>
         </div>
+
+        <!-- Projects Call to Action -->
+        <div class="projects-cta">
+          <h2 class="section-title">{{ $t('engineering.projectsCTA.title') }}</h2>
+          <p class="projects-cta-text">{{ $t('engineering.projectsCTA.description') }}</p>
+          <v-btn
+            to="/projects"
+            color="primary"
+            size="large"
+            variant="elevated"
+            class="projects-btn"
+            prepend-icon="mdi-code-braces"
+          >
+            {{ $t('engineering.projectsCTA.button') }}
+          </v-btn>
+        </div>
       </div>
     </v-container>
   </div>
@@ -262,6 +278,31 @@ onMounted(() => {
   gap: 0.5rem;
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.projects-cta {
+  margin: 4rem auto 2rem;
+  text-align: center;
+  max-width: 700px;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 152, 0, 0.05), rgba(255, 193, 7, 0.1));
+  border-radius: 16px;
+}
+
+.projects-cta-text {
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.projects-btn {
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  transition: transform 0.3s ease;
+}
+
+.projects-btn:hover {
+  transform: translateY(-4px);
 }
 
 @media (max-width: 768px) {
