@@ -12,9 +12,9 @@
     },
     "cv": {
       "englishLabel": "Téléchargez mon CV en anglais",
-      "english": "/src/assets/CV_EN_secret.pdf",
+      "english": "/CV_EN_secret.pdf",
       "frenchLabel": "Téléchargez mon CV en français",
-      "french": "/src/assets/CV_FR_secret.pdf"
+      "french": "/CV_FR_secret.pdf"
     },
     "blog": {
       "label": "Visiter Mon Blog (/!\\ en construction)"
@@ -53,7 +53,6 @@
     "title": "Project Portfolio",
     "description": "Explore detailed case studies of my technical projects, complete with challenges, solutions, and visual documentation",
     "filters": {
-      "all": "All Projects",
       "Network": "Network",
       "DevOps": "DevOps",
       "Security": "Security",

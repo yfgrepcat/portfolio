@@ -12,9 +12,9 @@
     },
     "cv": {
       "englishLabel": "Download English CV",
-      "english": "/src/assets/CV_EN_secret.pdf",
+      "english": "./assets/CV_EN_secret.pdf",
       "frenchLabel": "Download French CV",
-      "french": "/src/assets/CV_FR_secret.pdf"
+      "french": "./assets/CV_FR_secret.pdf"
     },
     "blog": {
       "label": "Visit My Technical Blog (/!\\ under construction)"
@@ -499,7 +499,6 @@
     "title": "Project Portfolio",
     "description": "Explore detailed case studies of my technical projects, complete with challenges, solutions, and visual documentation",
     "filters": {
-      "all": "All Projects",
       "Network": "Network",
       "DevOps": "DevOps",
       "Security": "Security",
@@ -542,7 +541,7 @@
         "image": "",
         "gallery": [
           {
-            "src": "src/assets/netprob_screen1.png",
+            "src": "/netprob_screen1.png",
             "caption": "Network topology visualization dashboard"
           }
         ],
@@ -570,10 +569,10 @@
           "Seamless integration of IoT devices",
           "Scalable and flexible architecture"
         ],
-        "image": "src/assets/Homelab_1.png",
+        "image": "/Homelab_1.png",
         "gallery": [
           {
-            "src": "src/assets/Homelab_1.png",
+            "src": "/Homelab_1.png",
             "caption": "Picture of my old infrastructure making use of refurbished enterprise hardware. [To be changed]"
           }
         ]
@@ -589,10 +588,10 @@
           "Simulated real-world admission scenarios",
           "Analyzed algorithm performance and fairness"
         ],
-        "image": "src/assets/GraphCoursup_1.png",
+        "image": "/GraphCoursup_1.png",
         "gallery": [
           {
-            "src": "src/assets/GraphCoursup_1.png",
+            "src": "/GraphCoursup_1.png",
             "caption": "Graph representation of students and programs"
           }
         ],
@@ -615,14 +614,14 @@
           "Robust OOP architecture",
           "Agile development process"
         ],
-        "image": "src/assets/Bomber7_1.png",
+        "image": "/Bomber7_1.png",
         "gallery": [
           {
-            "src": "src/assets/Bomber7_1.png",
+            "src": "/Bomber7_1.png",
             "caption": "Logo and front page of the report for the project"
           },
           {
-            "src": "src/assets/Bomber7_2.png",
+            "src": "/Bomber7_2.png",
             "caption": "Maps designed for the game"
           }
         ],
@@ -651,7 +650,7 @@
           "High availability solutions",
           "Comprehensive security measures"
         ],
-        "image": "src/assets/Network_1.png",
+        "image": "/Network_1.png",
         "links": [
           {}
         ]
@@ -668,7 +667,7 @@
           "Interactive project showcase",
           "Dynamic content management"
         ],
-        "image": "src/assets/Portfolio_1.png",
+        "image": "/Portfolio_1.png",
         "links": [
           {
             "text": "Source Code",
