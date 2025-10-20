@@ -191,180 +191,161 @@
           </v-col>
         </v-row>
       </div>
-      
-      <!-- Project Detail Dialog -->
-      <v-dialog
-        v-model="projectDialog"
-        max-width="900"
-        class="project-dialog"
-      >
-        <v-card v-if="selectedProject" class="dialog-card">
-          <v-btn icon="mdi-close" class="dialog-close" @click="projectDialog = false"></v-btn>
-          
-          <v-carousel
-            v-if="selectedProject.gallery && selectedProject.gallery.length > 0"
-            hide-delimiter-background
-            show-arrows="hover"
-            height="400"
-            class="dialog-carousel"
-          >
-            <v-carousel-item
-              v-for="(image, i) in selectedProject.gallery"
-              :key="i"
-              :src="image.src"
-              cover
-            >
-              <div class="dialog-caption">{{ image.caption }}</div>
-            </v-carousel-item>
-          </v-carousel>
-          <v-img 
-            v-else
-            :src="selectedProject.image || `https://picsum.photos/seed/${selectedProject.title}/800/500`" 
-            height="300"
-            cover
-          ></v-img>
-          
-          <v-card-text class="dialog-content">
-            <div class="dialog-header">
-              <h2 class="dialog-title">{{ selectedProject.title }}</h2>
-              <div class="dialog-meta">
-                <div class="dialog-category">
-                  {{ Array.isArray(selectedProject.category) 
-                    ? selectedProject.category[0]
-                    : selectedProject.category }}
-                </div>
-                <div class="dialog-date">{{ selectedProject.date }}</div>
-              </div>
-              <div class="dialog-tags">
-                <v-chip
-                  v-for="tech in selectedProject.technologies"
-                  :key="tech"
-                  size="small"
-                  variant="tonal"
-                  color="primary"
-                  class="tech-chip"
-                >
-                  {{ tech }}
-                </v-chip>
-              </div>
-            </div>
-            
-            <div class="dialog-body">
-              <p class="dialog-description">{{ selectedProject.description }}</p>
-              
-              <div v-if="selectedProject.challenge" class="dialog-challenge">
-                <h3 class="dialog-section-title">{{ $t('projects.challenge') }}</h3>
-                <p>{{ selectedProject.challenge }}</p>
-              </div>
-              
-              <div v-if="selectedProject.solution" class="dialog-solution">
-                <h3 class="dialog-section-title">{{ $t('projects.solution') }}</h3>
-                <p>{{ selectedProject.solution }}</p>
-              </div>
-              
-              <div class="dialog-highlights">
-                <h3 class="dialog-section-title">{{ $t('projects.highlights') }}</h3>
-                <ul>
-                  <li v-for="highlight in selectedProject.highlights" :key="highlight">
-                    {{ highlight }}
-                  </li>
-                </ul>
-              </div>
-              
-              <div v-if="selectedProject.learnings" class="dialog-learnings">
-                <h3 class="dialog-section-title">{{ $t('projects.learnings') }}</h3>
-                <p>{{ selectedProject.learnings }}</p>
-              </div>
-              
-              <div class="dialog-links">
-                <v-btn
-                  v-for="link in selectedProject.links"
-                  :key="link.url"
-                  :href="link.url"
-                  target="_blank"
-                  :prepend-icon="link.icon"
-                  variant="outlined"
-                  color="primary"
-                  class="link-btn"
-                >
-                  {{ link.text }}
-                </v-btn>
-              </div>
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
     </v-container>
+
+    <!-- Project Details Dialog -->
+    <v-dialog
+      v-if="selectedProject"
+      v-model="dialog"
+      fullscreen
+      transition="dialog-bottom-transition"
+      scrollable
+    >
+      <v-card class="dialog-card">
+        <v-toolbar dark color="primary" class="dialog-toolbar">
+          <v-btn icon="mdi-close" class="dialog-close" @click="dialog = false"></v-btn>
+          <v-toolbar-title class="dialog-toolbar-title">{{ selectedProject.title }}</v-toolbar-title>
+        </v-toolbar>
+        <v-card-text class="dialog-content">
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <div class="dialog-header">
+                  <h2 class="dialog-title">{{ selectedProject.title }}</h2>
+                  <div class="dialog-meta">
+                    <div class="dialog-category">
+                      {{ Array.isArray(selectedProject.category) 
+                        ? selectedProject.category[0]
+                        : selectedProject.category }}
+                    </div>
+                    <div class="dialog-date">{{ selectedProject.date }}</div>
+                  </div>
+                  <div class="dialog-tags">
+                    <v-chip
+                      v-for="tech in selectedProject.technologies"
+                      :key="tech"
+                      size="small"
+                      variant="tonal"
+                      color="primary"
+                      class="tech-chip"
+                    >
+                      {{ tech }}
+                    </v-chip>
+                  </div>
+                </div>
+                
+                <div class="dialog-body">
+                  <p class="dialog-description">{{ selectedProject.description }}</p>
+                  
+                  <div v-if="selectedProject.challenge" class="dialog-challenge">
+                    <h3 class="dialog-section-title">{{ $t('projects.challenge') }}</h3>
+                    <p>{{ selectedProject.challenge }}</p>
+                  </div>
+                  
+                  <div v-if="selectedProject.solution" class="dialog-solution">
+                    <h3 class="dialog-section-title">{{ $t('projects.solution') }}</h3>
+                    <p>{{ selectedProject.solution }}</p>
+                  </div>
+                  
+                  <div class="dialog-highlights">
+                    <h3 class="dialog-section-title">{{ $t('projects.highlights') }}</h3>
+                    <ul>
+                      <li v-for="highlight in selectedProject.highlights" :key="highlight">
+                        {{ highlight }}
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div v-if="selectedProject.learnings" class="dialog-learnings">
+                    <h3 class="dialog-section-title">{{ $t('projects.learnings') }}</h3>
+                    <p>{{ selectedProject.learnings }}</p>
+                  </div>
+                  
+                  <div class="dialog-links">
+                    <v-btn
+                      v-for="link in selectedProject.links"
+                      :key="link.url"
+                      :href="link.url"
+                      target="_blank"
+                      :prepend-icon="link.icon"
+                      variant="outlined"
+                      color="primary"
+                      class="link-btn"
+                    >
+                      {{ link.text }}
+                    </v-btn>
+                  </div>
+                </div>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
+import { useTheme } from 'vuetify'
+import type { Project } from '@/types'
 
-// Use Vue I18n
 const { t, tm } = useI18n()
-const router = useRouter()
+const theme = useTheme()
 
-// Get translated data
-const projectItems = computed(() => {
-  const items = tm('projects.items')
-  return Array.isArray(items) ? items : []
-})
+const projectItems = computed<Project[]>(() => tm('projects.items') as Project[])
 
-// State
-const selectedCategory = ref('all')
-const projectDialog = ref(false)
-const selectedProject = ref(null)
-
-// Derive categories from projects
-const categories = computed(() => {
-  const categorySet = new Set()
-  
-  projectItems.value.forEach(project => {
+const categories = computed<string[]>(() => {
+  const categorySet = new Set<string>()
+  projectItems.value.forEach((project: Project) => {
     if (Array.isArray(project.category)) {
-      project.category.forEach(cat => categorySet.add(cat))
-    } else {
+      project.category.forEach((cat: string) => categorySet.add(cat))
+    } else if (project.category) {
       categorySet.add(project.category)
     }
   })
-  
-  return Array.from(categorySet)
+  return ['All Projects', ...Array.from(categorySet)]
 })
 
-// Filter projects by selected category
-const filteredProjects = computed(() => {
-  if (selectedCategory.value === 'all') {
-    return projectItems.value.filter(project => !project.featured)
+const selectedCategory = ref('All Projects')
+const dialog = ref(false)
+const selectedProject = ref<Project | null>(null)
+
+const nonFeaturedProjects = computed<Project[]>(() => {
+  return projectItems.value.filter((project) => !project.featured)
+})
+
+const filteredProjects = computed<Project[]>(() => {
+  if (selectedCategory.value === 'All Projects') {
+    return nonFeaturedProjects.value
   }
-  
-  return projectItems.value.filter(project => {
-    if (!project.featured) {
-      if (Array.isArray(project.category)) {
-        return project.category.includes(selectedCategory.value)
-      } else {
-        return project.category === selectedCategory.value
-      }
+  return nonFeaturedProjects.value.filter((project) => {
+    if (Array.isArray(project.category)) {
+      return project.category.includes(selectedCategory.value)
     }
-    return false
+    return project.category === selectedCategory.value
   })
 })
 
-// Get the featured project
-const featuredProject = computed(() => {
-  return projectItems.value.find(project => project.featured) || null
+const featuredProject = computed<Project | null>(() => {
+  return projectItems.value.find((project) => project.featured) || null
 })
 
-// Methods
-const truncateText = (text, maxLength) => {
+const truncateText = (text: string | undefined, maxLength: number): string => {
+  if (!text) return ''
   if (text.length <= maxLength) return text
-  return text.slice(0, maxLength) + '...'
+  return text.substr(0, text.lastIndexOf(' ', maxLength)) + '...'
 }
 
-const openProjectDialog = (project) => {
+const openProjectDialog = (project: Project) => {
   selectedProject.value = project
-  projectDialog.value = true
+  dialog.value = true
+}
+
+const closeProjectDialog = () => {
+  dialog.value = false
+  selectedProject.value = null
 }
 
 onMounted(() => {
@@ -373,7 +354,7 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .projects-page {
   min-height: 100vh;
   padding: 2rem 0;

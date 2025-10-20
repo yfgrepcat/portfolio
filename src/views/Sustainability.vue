@@ -121,19 +121,17 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { Initiative, Practice, Service } from '@/types'
 
 const { t, tm } = useI18n()
 
-// Get translated data
-const valueItems = computed(() => tm('sustainability.values.items'))
-const communityItems = computed(() => tm('sustainability.community.items'))
-const environmentalItems = computed(() => tm('sustainability.environmental.items'))
-const educationItems = computed(() => tm('sustainability.education.items'))
-const practiceItems = computed(() => tm('sustainability.practices.items'))
+const educationItems = computed(() => tm('sustainability.education.items') as Initiative[])
+const practiceItems = computed(() => tm('sustainability.practices.items') as Practice[])
+const communityItems = computed(() => tm('sustainability.community.items') as Service[])
 
 onMounted(() => {
-  console.log('Sustainability component mounted')
-  console.log('Value items count:', valueItems.value.length)
+  console.log('Education items count:', educationItems.value.length)
+  console.log('Practice items count:', practiceItems.value.length)
   console.log('Community items count:', communityItems.value.length)
 })
 </script>

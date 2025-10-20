@@ -107,23 +107,14 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { Language, InternationalExperience } from '@/types'
 
 const { t, tm } = useI18n()
 
-// Get translated data
-const overviewStats = computed(() => tm('international.overview.stats'))
-const experienceItems = computed(() => tm('international.experiences.items'))
-const languageItems = computed(() => tm('international.languages.items'))
-const culturalInsights = computed(() => tm('international.cultural.insights'))
-
-// Map interaction
-const showCountryInfo = (country: string) => {
-  console.log(`Showing info for ${country}`)
-  // You can add a modal or tooltip here showing country-specific information
-}
+const languageItems = computed(() => tm('international.languages.items') as Language[])
+const experienceItems = computed(() => tm('international.experiences.items') as InternationalExperience[])
 
 onMounted(() => {
-  console.log('International component mounted')
   console.log('Experience items count:', experienceItems.value.length)
   console.log('Language items count:', languageItems.value.length)
 })

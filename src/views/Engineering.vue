@@ -65,44 +65,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { EngineeringProject } from '@/types'
 
-// Use Vue I18n
 const { t, tm } = useI18n()
 
-// Get translated data using tm() which handles arrays better
-const journeyItems = computed(() => {
-  const items = tm('engineering.journey.items')
-  console.log('Journey items:', items)
-  return Array.isArray(items) ? items : []
-})
-
-const domainItems = computed(() => {
-  const items = tm('engineering.domains.items')
-  console.log('Domain items:', items)
-  return Array.isArray(items) ? items : []
-})
-
-// Icons and colors for domains
-const domainIcons = [
-  'mdi-sitemap',
-  'mdi-shield-check'
-]
-
-const domainColors = [
-  '#4caf50',
-  '#f44336'
-]
-
-onMounted(() => {
-  console.log('Engineering component mounted')
-  console.log('Journey items count:', journeyItems.value.length)
-  console.log('Domain items count:', domainItems.value.length)
-})
+const journeyItems = computed(() => tm('engineering.journey.items') as EngineeringProject[])
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .engineering-page {
   min-height: 100vh;
   padding: 2rem 0;

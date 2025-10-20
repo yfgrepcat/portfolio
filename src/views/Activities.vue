@@ -90,17 +90,13 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { Sport, Interest } from '@/types'
 
 const { t, tm } = useI18n()
 
-// Get translated data
-const overviewStats = computed(() => tm('activities.overview.stats'))
-const athleticItems = computed(() => tm('activities.athletic.items'))
-const creativeItems = computed(() => tm('activities.creative.items'))
-const leadershipItems = computed(() => tm('activities.leadership.items'))
-const philosophyPrinciples = computed(() => tm('activities.philosophy.principles'))
+const athleticItems = computed(() => tm('activities.athletic.items') as Sport[])
+const creativeItems = computed(() => tm('activities.creative.items') as Interest[])
 
-// Utility function to adjust color brightness
 const adjustColor = (color: string, amount: number) => {
   const usePound = color[0] === "#"
   const col = usePound ? color.slice(1) : color
@@ -111,17 +107,16 @@ const adjustColor = (color: string, amount: number) => {
   r = r > 255 ? 255 : r < 0 ? 0 : r
   g = g > 255 ? 255 : g < 0 ? 0 : g
   b = b > 255 ? 255 : b < 0 ? 0 : b
-  return (usePound ? "#" : "") + (r << 16 | g << 8 | b).toString(16).padStart(6, '0')
+  return `#${(g | (b << 8) | (r << 16)).toString(16).padStart(6, '0')}`
 }
 
 onMounted(() => {
-  console.log('Activities component mounted')
   console.log('Athletic items count:', athleticItems.value.length)
   console.log('Creative items count:', creativeItems.value.length)
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .activities-page {
   min-height: 100vh;
   padding: 2rem 0;

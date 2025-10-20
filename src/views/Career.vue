@@ -111,14 +111,14 @@
               <v-card class="skill-card" elevation="2">
                 <v-card-text>
                   <h3 class="skill-category-title">{{ category.name }}</h3>
-                  <div class="skill-items">
-                    <v-chip 
-                      v-for="skill in category.items" 
-                      :key="skill"
-                      variant="tonal"
+                  <div class="skill-grid">
+                    <v-chip
+                      v-for="skill in category.items"
+                      :key="skill.name"
+                      class="skill-chip"
+                      variant="outlined"
                       color="primary"
                       size="small"
-                      class="skill-chip"
                     >
                       {{ skill }}
                     </v-chip>
@@ -166,24 +166,24 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import type { Experience, SkillCategory, Certification } from '@/types'
 
 const { t, tm } = useI18n()
 
-// Get translated data
-const currentResponsibilities = computed(() => tm('career.current.responsibilities'))
-const currentTechnologies = computed(() => tm('career.current.technologies'))
-const experienceItems = computed(() => tm('career.experience.items'))
-const skillCategories = computed(() => tm('career.skills.categories'))
-const certificationItems = computed(() => tm('career.certifications.items'))
+const experienceItems = computed(() => tm('career.experience.items') as Experience[])
+const skillCategories = computed(() => tm('career.skills.categories') as SkillCategory[])
+const certificationItems = computed(() => tm('career.certifications.items') as Certification[])
+const currentTechnologies = computed(() => tm('career.current.technologies') as string[])
+const currentResponsibilities = computed(() => tm('career.current.responsibilities') as string[])
 
 onMounted(() => {
-  console.log('Career component mounted')
   console.log('Experience items count:', experienceItems.value.length)
   console.log('Skill categories count:', skillCategories.value.length)
+  console.log('Certification items count:', certificationItems.value.length)
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .career-page {
   min-height: 100vh;
   padding: 2rem 0;
@@ -424,14 +424,10 @@ onMounted(() => {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.skill-items {
-  display: flex;
-  flex-wrap: wrap;
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 0.5rem;
-}
-
-.skill-chip {
-  margin-bottom: 0.5rem;
 }
 
 /* Certifications */
