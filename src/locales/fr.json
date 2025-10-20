@@ -12,9 +12,9 @@
     },
     "cv": {
       "englishLabel": "Téléchargez mon CV en anglais",
-      "english": "/CV_EN_secret.pdf",
+      "english": "CV_EN_secret.pdf",
       "frenchLabel": "Téléchargez mon CV en français",
-      "french": "/CV_FR_secret.pdf"
+      "french": "CV_FR_secret.pdf"
     },
     "blog": {
       "label": "Visiter Mon Blog (/!\\ en construction)"
@@ -90,7 +90,13 @@
             "Interface utilisateur interactive",
             "Utilisation de containerlab pour la virtualisation réseau"
           ],
-          "image": "",
+          "image": "netprob_screen1.png",
+          "gallery": [
+            {
+              "src": "netprob_screen1.png",
+              "caption": "Capture d'écran de l'interface utilisateur de NetProbe"
+            }
+          ],
           "links": [
             {
               "title": "Documentation",
@@ -116,7 +122,13 @@
             "Analyse de la stabilité des correspondances",
             "Préparation pour une interface web avec Neo4J"
           ],
-          "image": "",
+          "image": "GraphCoursup_1.png",
+          "gallery": [
+            {
+              "src": "GraphCoursup_1.png",
+              "caption": "Représentation graphique des étudiants et des programmes"
+            }
+          ],
           "links": [
             {
               "title": "Documentation",
@@ -142,7 +154,17 @@
             "Développement en équipe avec Scrum",
             "Interface utilisateur graphique avec Swing"
           ],
-          "image": "",
+          "image": "Bomber7_1.png",
+          "gallery": [
+            {
+              "src": "Bomber7_1.png",
+              "caption": "Logo et page de garde du rapport de projet"
+            },
+            {
+              "src": "Bomber7_2.png",
+              "caption": "Cartes conçues pour le jeu"
+            }
+          ],
           "links": [
             {
               "title": "Documentation",
@@ -168,7 +190,7 @@
             "Mise en œuvre de la sécurité 802.1x",
             "Conception pour la haute disponibilité"
           ],
-          "image": "",
+          "image": "Network_1.png",
           "links": [
             {
               "title": "Documentation",
@@ -189,7 +211,13 @@
             "Présentation interactive de projets",
             "Gestion dynamique de contenu"
           ],
-          "image": "",
+          "image": "Portfolio_1.png",
+          "gallery": [
+            {
+              "src": "Portfolio_1.png",
+              "caption": "Page d'accueil du site web portfolio"
+            }
+          ],
           "links": [
             {
               "text": "Code Source",

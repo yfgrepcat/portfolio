@@ -1,11 +1,11 @@
-  /**
+/**
  * router/index.ts
  *
  * Automatic routes for `./src/pages/*.vue`
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Career from '../views/Career.vue'
 import Engineering from '../views/Engineering.vue'
@@ -45,7 +45,6 @@ const routes = [
     name: 'Activities',
     component: Activities
   },
-  // Add this new route
   {
     path: '/projects',
     name: 'Projects',
@@ -54,7 +53,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(import.meta.env.BASE_URL),  // Changed to hash history with base path
   routes,
   scrollBehavior() {
     return { top: 0 }

@@ -12,9 +12,9 @@
     },
     "cv": {
       "englishLabel": "Download English CV",
-      "english": "./assets/CV_EN_secret.pdf",
+      "english": "CV_EN_secret.pdf",
       "frenchLabel": "Download French CV",
-      "french": "./assets/CV_FR_secret.pdf"
+      "french": "CV_FR_secret.pdf"
     },
     "blog": {
       "label": "Visit My Technical Blog (/!\\ under construction)"
@@ -541,7 +541,7 @@
         "image": "",
         "gallery": [
           {
-            "src": "/netprob_screen1.png",
+            "src": "netprob_screen1.png",
             "caption": "Network topology visualization dashboard"
           }
         ],
@@ -569,10 +569,10 @@
           "Seamless integration of IoT devices",
           "Scalable and flexible architecture"
         ],
-        "image": "/Homelab_1.png",
+        "image": "Homelab_1.png",
         "gallery": [
           {
-            "src": "/Homelab_1.png",
+            "src": "Homelab_1.png",
             "caption": "Picture of my old infrastructure making use of refurbished enterprise hardware. [To be changed]"
           }
         ]
@@ -588,10 +588,10 @@
           "Simulated real-world admission scenarios",
           "Analyzed algorithm performance and fairness"
         ],
-        "image": "/GraphCoursup_1.png",
+        "image": "GraphCoursup_1.png",
         "gallery": [
           {
-            "src": "/GraphCoursup_1.png",
+            "src": "GraphCoursup_1.png",
             "caption": "Graph representation of students and programs"
           }
         ],
@@ -614,14 +614,14 @@
           "Robust OOP architecture",
           "Agile development process"
         ],
-        "image": "/Bomber7_1.png",
+        "image": "Bomber7_1.png",
         "gallery": [
           {
-            "src": "/Bomber7_1.png",
+            "src": "Bomber7_1.png",
             "caption": "Logo and front page of the report for the project"
           },
           {
-            "src": "/Bomber7_2.png",
+            "src": "Bomber7_2.png",
             "caption": "Maps designed for the game"
           }
         ],
@@ -650,7 +650,7 @@
           "High availability solutions",
           "Comprehensive security measures"
         ],
-        "image": "/Network_1.png",
+        "image": "Network_1.png",
         "links": [
           {}
         ]
@@ -667,7 +667,7 @@
           "Interactive project showcase",
           "Dynamic content management"
         ],
-        "image": "/Portfolio_1.png",
+        "image": "Portfolio_1.png",
         "links": [
           {
             "text": "Source Code",
