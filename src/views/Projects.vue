@@ -21,15 +21,6 @@
           selected-class="category-active"
         >
           <v-chip
-            filter
-            value="all"
-            variant="elevated"
-            color="primary"
-            class="filter-chip"
-          >
-            {{ $t('projects.filters.all') }}
-          </v-chip>
-          <v-chip
             v-for="category in categories"
             :key="category"
             filter
@@ -317,9 +308,9 @@ const nonFeaturedProjects = computed<Project[]>(() => {
 })
 
 const filteredProjects = computed<Project[]>(() => {
-  if (selectedCategory.value === 'All Projects') {
-    return nonFeaturedProjects.value
-  }
+   if (selectedCategory.value === 'All Projects') {
+     return nonFeaturedProjects.value
+   }
   return nonFeaturedProjects.value.filter((project) => {
     if (Array.isArray(project.category)) {
       return project.category.includes(selectedCategory.value)

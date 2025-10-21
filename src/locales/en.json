@@ -499,6 +499,7 @@
     "title": "Project Portfolio",
     "description": "Explore detailed case studies of my technical projects, complete with challenges, solutions, and visual documentation",
     "filters": {
+      "All Projects": "All Projects",
       "Network": "Network",
       "DevOps": "DevOps",
       "Security": "Security",
