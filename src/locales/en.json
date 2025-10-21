@@ -12,9 +12,9 @@
     },
     "cv": {
       "englishLabel": "Download English CV",
-      "english": "Yoann_Francois_resume.pdf",
+      "english": "CV_EN_secret.pdf",
       "frenchLabel": "Download French CV",
-      "french": "Yoann_Francois_cv.pdf"
+      "french": "CV_FR_secret.pdf"
     },
     "blog": {
       "label": "Visit My Technical Blog (/!\\ under construction)"
